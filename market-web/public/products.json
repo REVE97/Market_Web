@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "MacBook",
+      "provider": "APPLE",
+      "price": 1300000,
+      "image": "/images/MacBook.png"
+    },
+    {
+
+    }
+  ]
+}
