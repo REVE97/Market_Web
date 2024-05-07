@@ -8,7 +8,18 @@
       "image": "/images/MacBook.png"
     },
     {
-
+      "id": 2,
+      "name": "IPAD",
+      "provider": "APPLE",
+      "price": 1100000,
+      "image": "/images/ipad.png"
+    },
+    {
+      "id": 3,
+      "name": "IPHONE",
+      "provider": "APPLE",
+      "price": 1500000,
+      "image": "/images/iphone.png"
     }
   ]
 }
