@@ -16,20 +16,20 @@ export const TopNavigationBar = () => {
         </div>
       </div>
 
-      {/* <div className={styles.menu}>
-        <Link to="/cart">
+      <div className={styles.menu}>
+        {/* <Link to="/cart">
           <div className={styles.shopping_cart}>
             <img src="/images/icon-shopping-cart.svg" alt="cart" />
             <span>장바구니</span>
           </div>
-        </Link>
+        </Link> */}
         <Link to="">
           <div className={styles.mypage}>
             <img src="/images/icon-user.svg" alt="user" />
-            <span>로그인</span>
+            <span>마이페이지</span>
           </div>
         </Link>
-      </div> */}
+      </div>
     </header>
   );
 };

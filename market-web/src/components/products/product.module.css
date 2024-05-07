@@ -1,6 +1,11 @@
 .product {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product_item {
+  flex: 1 0 48%;
 }
 
 .product_image {
