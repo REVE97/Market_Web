@@ -6,6 +6,7 @@ export const TopNavigationBar = () => {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
+        
         <Link to="/">
           <h1 className={styles.logo}>
             <img src="/images/sku.png" alt="logo" />
@@ -27,6 +28,7 @@ export const TopNavigationBar = () => {
           </div>
         </Link>
       </div>
+
     </header>
   );
 };

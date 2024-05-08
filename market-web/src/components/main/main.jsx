@@ -5,7 +5,6 @@ import { Product } from "../products/product";
 export const Main = () => {
   return (
     <>
-      <hr></hr>
       <EventBanner />
       <hr></hr><br></br>
       
