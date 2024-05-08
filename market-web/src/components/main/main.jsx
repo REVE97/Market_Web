@@ -5,12 +5,16 @@ import { Product } from "../products/product";
 export const Main = () => {
   return (
     <>
+      <hr></hr>
       <EventBanner />
+      <hr></hr><br></br>
+      
       <div className={styles.filter}>
-        <p>최신순</p>
+        <p>등록 최신순</p>
         <p>낮은 변동순</p>
         <p>높은 변동순</p>
       </div>
+      
       <main className={styles.flex_wrap}>
         <Product />
       </main>
