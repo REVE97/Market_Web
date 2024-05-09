@@ -27,6 +27,13 @@ export const TopNavigationBar = () => {
             <span>마이페이지</span>
           </div>
         </Link>
+
+        <Link to="">
+          <div className={styles.mypage}>
+            <img src="/images/icon-favorite.svg" alt="user" />
+            <span>찜목록</span>
+          </div>
+        </Link>
       </div>
 
     </header>
