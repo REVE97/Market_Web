@@ -20,7 +20,7 @@ export const Product = () => {
 
         <div className={styles.product_price}>
           <span className={styles.price}>1,300,000</span>
-          <span className={styles.unit}>원</span>
+          <span className={styles.unit}>원<img src="images/icon-up.svg" alt="arrow" /></span>
         </div>
       </div>
 
@@ -40,7 +40,7 @@ export const Product = () => {
 
         <div className={styles.product_price}>
           <span className={styles.price}>1,100,000</span>
-          <span className={styles.unit}>원</span>
+          <span className={styles.unit}>원<img src="images/icon-down.svg" alt="arrow" /></span>
         </div>
       </div>
 
@@ -60,7 +60,7 @@ export const Product = () => {
 
         <div className={styles.product_price}>
           <span className={styles.price}>1,500,000</span>
-          <span className={styles.unit}>원</span>
+          <span className={styles.unit}>원<img src="images/icon-up.svg" alt="arrow" /></span>
         </div>
       </div>
 

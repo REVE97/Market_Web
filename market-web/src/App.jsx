@@ -16,9 +16,7 @@ function App() {
       
       <div className="container">
         <Sidebar />
-      
-        <hr style={{ border: "5px solid #808080", width: '1', height: '40%'}} />
-        
+          
         <div className="others">
         <Routes>
           <Route path="/" element={<Home />} />
