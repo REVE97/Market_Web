@@ -6,7 +6,7 @@ export const EventBanner = () => {
       className={styles.banner}
       style={{
         backgroundImage: "url(/images/Coupang.png",
-        backgroundSize: "100%",
+        backgroundSize: "cover",
       }}
     >
     </article>

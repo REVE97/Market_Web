@@ -23,3 +23,11 @@ li {
 button {
   cursor: pointer;
 }
+
+.container {
+  flex: 1;
+}
+
+.others {
+  flex: 4;
+}
