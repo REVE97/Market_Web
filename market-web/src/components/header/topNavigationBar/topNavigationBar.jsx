@@ -9,7 +9,7 @@ export const TopNavigationBar = () => {
         
         <Link to="/">
           <h1 className={styles.logo}>
-            <img src="/images/sku.png" alt="logo" />
+            <img src="/images/symbol.png" alt="logo" />
           </h1>
         </Link>
         

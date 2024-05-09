@@ -12,7 +12,7 @@ function App() {
     
         <TopNavigationBar />
         {/* <Nav /> */}
-        <hr></hr>
+        <hr></hr><br></br>
       
       <div className="container">
         <Sidebar />

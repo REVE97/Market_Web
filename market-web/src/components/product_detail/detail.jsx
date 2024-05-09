@@ -11,16 +11,16 @@ export const Detail = () => {
         </section>
         <section className={styles.product}>
           <div className={styles.product_info}>
-            <p className={styles.seller_store}>아이돈케어</p>
-            <p className={styles.product_name}>마로네 노트북 파우치</p>
+            <p className={styles.seller_store}></p>
+            <p className={styles.product_name}></p>
             <span className={styles.price}>
-              1000
+              
               <span className={styles.unit}>원</span>
             </span>
           </div>
 
           <div className={styles.delivery}>
-            <p>택배배송 / 무료배송</p>
+            <p></p>
           </div>
 
           <div className={styles.line}></div>
