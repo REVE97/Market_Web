@@ -30,10 +30,19 @@ export const TopNavigationBar = () => {
 
         <Link to="">
           <div className={styles.mypage}>
-            <img src="/images/icon-favorite.svg" alt="user" />
+            <img src="/images/icon-favorite.svg" alt="favorite" />
             <span>찜목록</span>
           </div>
         </Link>
+
+        <Link to="">
+          <div className={styles.mypage}>
+            <img src="/images/icon-power.svg" alt="login" />
+            <span>로그인</span>
+          </div>
+        </Link>
+
+
       </div>
 
     </header>

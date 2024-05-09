@@ -2,7 +2,6 @@
     flex:1;
     height: clac(100vh - 50px);
     background-color: rgb(240,239,239);
-
     position: sticky;
     top: 50px;
 }
@@ -17,7 +16,7 @@
 }
 
 .sidebarTitle {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: rgb(197, 197, 197);
 }
 
