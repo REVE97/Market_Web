@@ -15,7 +15,7 @@ export const TopNavigationBar = () => {
         
         <div className={styles.input_wrap}>
           <input type="text" placeholder="Search..." />
-          <img src="/images/icon-search.svg" alt="search" />
+          {/* <img src="/images/icon-search.svg" alt="search" /> */}
         </div>
 
       </div>

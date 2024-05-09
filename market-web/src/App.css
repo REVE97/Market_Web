@@ -1,5 +1,5 @@
-#root {
-}
+/* #root {
+} */
 
 * {
   margin: 0;
@@ -15,19 +15,14 @@ a {
   text-decoration: none;
 }
 
-ul,
-li {
-  list-style: none;
-}
-
 button {
   cursor: pointer;
 }
 
 .container {
-  flex: 1;
+  display: flex;
 }
 
 .others {
-  flex: 4;
+  flex : 6;
 }

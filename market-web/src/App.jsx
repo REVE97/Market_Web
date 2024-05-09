@@ -9,22 +9,23 @@ import { Sidebar } from "./components/sidebar/sidebar.jsx";
 function App() {
   return (
     <BrowserRouter>
-      <div className="others">
+    
         <TopNavigationBar />
-        <Nav />
-      </div>
-  
+        {/* <Nav /> */}
+        <hr></hr>
       
       <div className="container">
         <Sidebar />
-      </div>
-
-      <div className="others">
+      
+        <div className="others">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
+        </div>
+
       </div>
+      
     </BrowserRouter>
   );
 }

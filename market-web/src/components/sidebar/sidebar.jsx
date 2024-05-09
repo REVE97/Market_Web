@@ -1,7 +1,6 @@
 import React from 'react'
 import './sidebar.css'
-// import HomeWorkIcon from '@mui/icon-material/HomeWork'
-
+import { Link } from 'react-router-dom';
 
 export const Sidebar = () => {
     return (
@@ -9,22 +8,50 @@ export const Sidebar = () => {
     <div className="sidebar">
         <div className='sidebarWrapper'>
             <div className='sidebarMenu'>
-                <h3 className='sideberTitle'>Dashboard</h3>
+                <h3 className='sideberTitle'>Main</h3>
                 <ul className='sidebarList'>
-                    
+    
                     <li className='sidebarListItem'>
-                        {/* <HomeWorkIcon /> */}
-                        Home
+                       <Link className="sidebarLink" to={'/'}>Home</Link>
+                    </li>
+
+                </ul>
+
+                <h3 className='sideberTitle'>Computer</h3>
+                <ul className='sidebarList'>
+    
+                    <li className='sidebarListItem'>
+                       <Link className="sidebarLink" to={'/desktop'}>DESKTOP</Link>
                     </li>
                     <li className='sidebarListItem'>
-                        {/* <HomeWorkIcon /> */}
-                        Analystics
+                       <Link className="sidebarLink" to={'/notebook'}>NOTEBOOK</Link>
                     </li>
                     <li className='sidebarListItem'>
-                        {/* <HomeWorkIcon /> */}
-                        Sales
+                       <Link className="sidebarLink" to={'/pad'}>PAD</Link>
                     </li>
-                    
+                    <li className='sidebarListItem'>
+                       <Link className="sidebarLink" to={'/phone'}>PHONE</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <Link className="sidebarLink" to={'/smartwatch'}>SMARTWATCH</Link>
+                    </li>
+                </ul>
+
+                <h3 className='sideberTitle'>Digital</h3>
+                <ul className='sidebarList'>
+                    <li className='sidebarListItem'>
+                       <Link className="sidebarLink" to={'/monitor'}>MONITOR</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <Link className="sidebarLink" to={'/mouse'}>MOUSE</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <Link className="sidebarLink" to={'/keyboard'}>KEYBOARD</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <Link className="sidebarLink" to={'/game'}>GAME</Link>
+                    </li>
+
                 </ul>
             </div>
         </div>
