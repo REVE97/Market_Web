@@ -19,7 +19,8 @@ export const Sidebar = () => {
 
                 </ul>
 
-                <h3 className='sidebarTitle'>Computer Devices</h3>
+                <h3 className='sidebarTitle'>
+                <Link className="sidebarTitle" to={'/computer devices'}>Computer Devices</Link></h3>
                 <ul className='sidebarList'>
     
                     <li className='sidebarListItem'>
@@ -44,7 +45,7 @@ export const Sidebar = () => {
                     </li>
                 </ul>
 
-                <h3 className='sidebarTitle'>Digital</h3>
+                <h3 className='sidebarTitle'><Link className="sidebarTitle" to={'/digital'}>Digital</Link></h3>
                 <ul className='sidebarList'>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-monitor.svg" alt="monitor" />

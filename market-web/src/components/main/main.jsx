@@ -1,6 +1,7 @@
 import styles from "./main.module.css";
 import { EventBanner } from "../eventBanner/eventBanner";
 import { Product } from "../products/product";
+import { Chart } from '../chart/chart.jsx'
 
 export const Main = () => {
   return (
@@ -16,6 +17,8 @@ export const Main = () => {
       <main className={styles.flex_wrap}>
         <Product />
       </main>
+
+      <Chart></Chart>
     </>
   );
 };
