@@ -1,6 +1,6 @@
 import React from 'react'
 import './chart.css'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'  // YAxis, Legend 필요할 시 추가
 
 export const Chart = () => {
 

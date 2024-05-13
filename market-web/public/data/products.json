@@ -20,6 +20,49 @@
       "provider": "APPLE",
       "price": 1500000,
       "image": "/images/iphone.png"
+    },
+    {
+      "id": 4,
+      "name": "DESKTOP",
+      "provider": "APPLE",
+      "price": 1835820,
+      "image": "/images/desktop.png"
+    },
+    {
+      "id": 5,
+      "name": "MONITOR",
+      "provider": "APPLE",
+      "price": 2490000,
+      "image": "/images/monitor.png"
+    },
+    {
+      "id": 6,
+      "name": "KEYBOARD",
+      "provider": "APPLE",
+      "price": 153050,
+      "image": "/images/keyboard.png"
+    },
+    {
+      "id": 7,
+      "name": "MOUSE",
+      "provider": "APPLE",
+      "price": 82770,
+      "image": "/images/mouse.png"
+    },
+    {
+      "id": 8,
+      "name": "SMARTWATCH",
+      "provider": "APPLE",
+      "price": 499900,
+      "image": "/images/smartwatch.png"
+    },
+    {
+      "id": 9,
+      "name": "SWITCH GAME",
+      "provider": "NINTENDO",
+      "price": 63900,
+      "image": "/images/game.png"
     }
+    
   ]
 }
