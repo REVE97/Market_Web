@@ -6,47 +6,47 @@ export const Chart = () => {
 
     const data = [
         {
-            name: 'Jan',
+            name: '2024.5.1',
             'Active User' : 4490,
         },
         {
-            name: 'Feb',
+            name: '2024.5.2',
             'Active User' : 3430,
         },
         {
-            name: 'Mar',
+            name: '2024.5.3',
             'Active User' : 2490,
         },
         {
-            name: 'Apr',
+            name: '2024.5.4',
             'Active User' : 3390,
         },
         {
-            name: 'May',
+            name: '2024.5.5',
             'Active User' : 1230,
         },
         {
-            name: 'Jun',
+            name: '2024.5.6',
             'Active User' : 5290,
         },
         {
-            name: 'Jul',
+            name: '2024.5.7',
             'Active User' : 2390,
         },
         {
-            name: 'Aug',
+            name: '2024.5.8',
             'Active User' : 4540,
         },
         {
-            name: 'Sep',
+            name: '2024.5.9',
             'Active User' : 4235,
         },
         {
-            name: 'Oct',
+            name: '2024.5.10',
             'Active User' : 4490,
         },
         {
-            name: 'Dec',
+            name: '2024.5.11',
             'Active User' : 2910,
         },
         

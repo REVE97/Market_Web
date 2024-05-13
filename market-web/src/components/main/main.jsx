@@ -18,7 +18,10 @@ export const Main = () => {
         <Product />
       </main>
 
+      <hr></hr>
+
       <Chart></Chart>
+      
     </>
   );
 };
