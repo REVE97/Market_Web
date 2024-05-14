@@ -1,12 +1,25 @@
+import { useParams } from "react-router-dom";
 import styles from "./detail.module.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const Detail = () => {
+  
+  const {id} = useParams();
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    axios.get("/data/products.json").then((data) => {
+      setProduct(data.data.products.find((product) => product.id === parseInt(id)))
+    });
+  }, [id]);
+
   return (
     <>
       <main className={styles.main}>
         <section className={styles.product}>
           <div className={styles.product_img}>
-            <img src="/images/image002.png" alt="product" />
+            <img src="/images/mouse.png" alt="product" />
           </div>
         </section>
         <section className={styles.product}>

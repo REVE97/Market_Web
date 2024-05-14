@@ -5,7 +5,7 @@ export const Product = ( {product, convertPrice} ) => {
   return (
     <div className={styles.product}>
       <div className={styles.product_item}>
-        <Link to="#">
+      <Link to={`/product/${product.id}`}>
           <div className={styles.product_image}>
             <img src={product.image} alt="product" />
           </div>

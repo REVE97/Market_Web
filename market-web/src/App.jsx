@@ -30,8 +30,9 @@ function App() {
           <Home 
             products = {products} 
             setProducts = {setProducts} 
-            convertPrice={convertPrice} />
-          } />
+            convertPrice = {convertPrice} />
+          } 
+          />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
         </div>
