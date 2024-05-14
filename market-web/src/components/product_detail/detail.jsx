@@ -3,7 +3,7 @@ import styles from "./detail.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export const Detail = () => {
+export const Detail = ( {convertPrice}) => {
   
   const {id} = useParams();
   const [product, setProduct] = useState({});
@@ -19,15 +19,15 @@ export const Detail = () => {
       <main className={styles.main}>
         <section className={styles.product}>
           <div className={styles.product_img}>
-            <img src="/images/mouse.png" alt="product" />
+            <img src={product.image} alt="product" />
           </div>
         </section>
         <section className={styles.product}>
           <div className={styles.product_info}>
-            <p className={styles.seller_store}></p>
-            <p className={styles.product_name}></p>
+            <p className={styles.seller_store}>{product.provider}</p>
+            <p className={styles.product_name}>{product.name}</p>
             <span className={styles.price}>
-              
+              {product.price}
               <span className={styles.unit}>원</span>
             </span>
           </div>
