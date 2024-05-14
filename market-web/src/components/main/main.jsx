@@ -5,7 +5,7 @@ import { Chart } from '../chart/chart.jsx'
 import { useEffect } from "react";
 import axios from "axios";
 
-export const Main = ({ products, setProducts }) => {
+export const Main = ({ products, setProducts, convertPrice }) => {
   
   useEffect(() => {
     axios.get("/data/products.json").then((data) => {
@@ -13,8 +13,6 @@ export const Main = ({ products, setProducts }) => {
     });
   }, [setProducts]);
 
-  console.log(products);
-  
   return (
     <>
       <EventBanner />
@@ -26,7 +24,9 @@ export const Main = ({ products, setProducts }) => {
       </div>
       
       <main className={styles.flex_wrap}>
-        <Product />
+        {products.map((product) => {
+          return <Product key={product.id} product={product} convertPrice={convertPrice} />
+        })}
       </main>
 
       <hr></hr>

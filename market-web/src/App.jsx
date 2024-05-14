@@ -10,6 +10,9 @@ import { useState } from "react";
 function App() {
   
   const [products, setProducts] = useState([]);
+  const convertPrice = (price) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");   // 천원 단위로 가격표시
+  }
 
   return (
     <BrowserRouter>
@@ -23,7 +26,12 @@ function App() {
           
         <div className="others">
         <Routes>
-          <Route path="/" element={<Home products = {products} setProducts = {setProducts} />} />
+          <Route path="/" element={
+          <Home 
+            products = {products} 
+            setProducts = {setProducts} 
+            convertPrice={convertPrice} />
+          } />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
         </div>
