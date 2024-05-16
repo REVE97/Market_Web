@@ -32,6 +32,22 @@ export const Sidebar = () => {
                        <Link className="sidebarLink" to={'/notebook'}>NOTEBOOK</Link>
                     </li>
                     <li className='sidebarListItem'>
+                    <img src="/images/icon-monitor.svg" alt="monitor" />
+                       <Link className="sidebarLink" to={'/monitor'}>MONITOR</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <img src="/images/icon-mouse.svg" alt="mouse" />
+                       <Link className="sidebarLink" to={'/mouse'}>MOUSE</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <img src="/images/icon-keyboard.svg" alt="keyboard" />
+                       <Link className="sidebarLink" to={'/keyboard'}>KEYBOARD</Link>
+                    </li>
+                </ul>
+
+                <h3 className='sidebarTitle'><Link className="sidebarTitle" to={'/digital'}>Digital</Link></h3>
+                <ul className='sidebarList'>
+                    <li className='sidebarListItem'>
                        <img src="/images/icon-tablet.svg" alt="tablet" />
                        <Link className="sidebarLink" to={'/pad'}>PAD</Link>
                     </li>
@@ -42,22 +58,6 @@ export const Sidebar = () => {
                     <li className='sidebarListItem'>
                        <img src="/images/icon-watch.svg" alt="watch" />
                        <Link className="sidebarLink" to={'/smartwatch'}>SMARTWATCH</Link>
-                    </li>
-                </ul>
-
-                <h3 className='sidebarTitle'><Link className="sidebarTitle" to={'/digital'}>Digital</Link></h3>
-                <ul className='sidebarList'>
-                    <li className='sidebarListItem'>
-                       <img src="/images/icon-monitor.svg" alt="monitor" />
-                       <Link className="sidebarLink" to={'/monitor'}>MONITOR</Link>
-                    </li>
-                    <li className='sidebarListItem'>
-                       <img src="/images/icon-mouse.svg" alt="mouse" />
-                       <Link className="sidebarLink" to={'/mouse'}>MOUSE</Link>
-                    </li>
-                    <li className='sidebarListItem'>
-                       <img src="/images/icon-keyboard.svg" alt="keyboard" />
-                       <Link className="sidebarLink" to={'/keyboard'}>KEYBOARD</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-game.svg" alt="game" />

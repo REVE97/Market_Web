@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Macbook air",
+      "name": "Macbook Air",
       "provider": "APPLE",
       "price": 1300000,
       "image": "/images/macbook.png"

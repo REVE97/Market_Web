@@ -15,7 +15,6 @@ export const TopNavigationBar = () => {
         
         <div className={styles.input_wrap}>
           <input type="text" placeholder="Search..." />
-          {/* <img src="/images/icon-search.svg" alt="search" /> */}
         </div>
 
       </div>
@@ -41,7 +40,6 @@ export const TopNavigationBar = () => {
             <span>로그인</span>
           </div>
         </Link>
-
 
       </div>
 
