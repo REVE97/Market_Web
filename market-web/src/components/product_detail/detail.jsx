@@ -3,6 +3,7 @@ import styles from "./detail.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Chart } from '../chart/chart.jsx'
+import { userData } from '../../Data.js';
 
 export const Detail = ( {convertPrice}) => {
   
@@ -37,7 +38,12 @@ export const Detail = ( {convertPrice}) => {
       
       <hr></hr>
       
-      <Chart></Chart>
+      <Chart
+        data={userData}
+        title="Price Charts"
+        grid
+        dataKey="Price"
+      ></Chart>
       
     </>
   );

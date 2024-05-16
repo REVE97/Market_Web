@@ -6,13 +6,15 @@ import axios from "axios";
 
 export const Main = ({ products, setProducts, convertPrice }) => {
   
-  useEffect(() => {
+  // 데이터 입력
+  useEffect(() => {                                             
     axios.get("/data/products.json").then((data) => {
       setProducts(data.data.products);
     });
   }, [setProducts]);
-
-  const sortProduct = (type) => {                               // 정렬 함수
+  
+  // 정렬 함수
+  const sortProduct = (type) => {                               
     const newProduct = [...products];
     if ( type === "basic" ) {
       newProduct.sort(( a, b ) => a.id - b.id);

@@ -5,7 +5,6 @@ import Home from "./pages/home";
 import Product from "./pages/product";
 import { Sidebar } from "./components/sidebar/sidebar.jsx";
 import { useState } from "react";
-// import { Nav } from "./components/nav/nav.jsx";  // 상단 네이게이션 바 
 
 function App() {
   
@@ -18,7 +17,7 @@ function App() {
     <BrowserRouter>
     
         <TopNavigationBar />
-        {/* <Nav /> */}
+        
         <hr></hr><br></br>
       
       <div className="container">
