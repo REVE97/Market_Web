@@ -1,7 +1,6 @@
 import styles from "./main.module.css";
 import { EventBanner } from "../eventBanner/eventBanner";
 import { Product } from "../products/product";
-import { Chart } from '../chart/chart.jsx'
 import { useEffect } from "react";
 import axios from "axios";
 
@@ -31,8 +30,6 @@ export const Main = ({ products, setProducts, convertPrice }) => {
 
       <hr></hr>
 
-      <Chart></Chart>
-      
     </>
   );
 };
