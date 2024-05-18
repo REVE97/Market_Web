@@ -1,4 +1,4 @@
-# Market Web Page Project
+# Real-time Price Information Web Page Project
 ### 5.16 => recharts 모듈 설치 : npm install recharts --legacy-peer-deps
 ### 5.18 => feedback : 
 1. 시각화 요소 추가
