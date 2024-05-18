@@ -64,11 +64,29 @@ export const Sidebar = () => {
                        <Link className="sidebarLink" to={'/game'}>GAME</Link>
                     </li>
 
+                <hr></hr><br></br>
+
+                </ul>
+
+                <h3 className='sidebarTitle'><Link className="sidebarTitle" to={'/brand'}>Brand</Link></h3>
+                <ul className='sidebarList'>
+                    <li className='sidebarListItem'>
+                       <img src="/images/icon-apple.svg" alt="apple" />
+                       <Link className="sidebarLink" to={'/apple'}>APPLE</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <img src="/images/icon-samsung.svg" alt="samsung" />
+                       <Link className="sidebarLink" to={'/samsung'}>SAMSUNG</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <img src="/images/icon-lg.png" alt="lg" />
+                       <Link className="sidebarLink" to={'/lg'}>LG</Link>
+                    </li>
+
                 </ul>
             </div>
         </div>
     </div>
-
 
  )
 }

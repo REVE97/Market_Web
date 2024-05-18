@@ -32,6 +32,13 @@ export const Detail = ( {convertPrice}) => {
               {new Intl.NumberFormat().format(product.price)}
               <span className={styles.unit}>원</span>
             </span>
+            
+            {/* 구매 링크 */}
+            <button 
+            className={styles.buyButton} 
+            onClick={() => window.location.href = "http://coupang.com"}>
+            구매하기
+            </button>
           </div>
         </section>
       </main>

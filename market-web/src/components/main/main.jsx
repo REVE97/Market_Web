@@ -1,10 +1,13 @@
 import styles from "./main.module.css";
 import { EventBanner } from "../eventBanner/eventBanner";
 import { Product } from "../products/product";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const Main = ({ products, setProducts, convertPrice }) => {
+  
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;    // 페이지에 나타낼 product 제품수 설정
   
   // 데이터 입력
   useEffect(() => {                                             
@@ -28,6 +31,19 @@ export const Main = ({ products, setProducts, convertPrice }) => {
     }
   }
 
+  // 페이지 변경 함수
+  const changePage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+  
+  // 현재 페이지에 맞는 제품 리스트를 계산
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+
+  // 총 페이지 수 계산
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+
   return (
     <>
       <EventBanner />
@@ -40,12 +56,20 @@ export const Main = ({ products, setProducts, convertPrice }) => {
       </div>
       
       <main className={styles.flex_wrap}>
-        {products.map((product) => {
+        {currentItems.map((product) => {
           return <Product key={product.id} product={product} convertPrice={convertPrice} />
         })}
       </main>
 
-      <hr></hr>
+      
+      {/* 페이지 버튼 구현 */}
+      <div className={styles.pagination}>
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button key={index + 1} onClick={() => changePage(index + 1)}>
+            {index + 1}
+          </button>
+        ))}
+      </div>
 
     </>
   );

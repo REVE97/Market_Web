@@ -270,3 +270,19 @@
     display: block;
   }
 }
+
+
+/* 구매하기 버튼 CSS */
+.buyButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buyButton:hover {
+  background-color: gray;
+}
