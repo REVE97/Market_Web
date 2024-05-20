@@ -1,22 +1,45 @@
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./topNavigationBar.module.css";
-import { Link } from "react-router-dom";
- 
+
 export const TopNavigationBar = () => {
   
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  // 검색 엔진 함수
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      navigate(`/search?query=${searchTerm.trim()}`);
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
         
+        {/* 홈 화면으로 가는 홈버튼 */}
         <Link to="/">
           <h1 className={styles.logo}>
             <img src="/images/symbol.png" alt="logo" />
           </h1>
         </Link>
         
+        {/* 검색 창, 버튼 */}
         <div className={styles.input_wrap}>
-          <input type="text" placeholder="Search..." />
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <button type="submit">
+              <img src="/images/icon-search.svg" alt="Search" />
+            </button>
+          </form>
         </div>
-
       </div>
 
       <div className={styles.menu}>
@@ -40,9 +63,7 @@ export const TopNavigationBar = () => {
             <span>로그인</span>
           </div>
         </Link>
-
       </div>
-
     </header>
   );
 };

@@ -55,6 +55,15 @@ function App() {
                 convertPrice={convertPrice} />} 
           />
 
+          {/* 데이터의 name 필드 값 검색기능 */}
+          <Route path="/search" element={
+              <FilteredProducts 
+                products={products} 
+                setProducts={setProducts} 
+                convertPrice={convertPrice} />
+            } 
+            />
+
         </Routes>
         </div>
 

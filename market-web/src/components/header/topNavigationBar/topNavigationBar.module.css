@@ -24,6 +24,7 @@
 }
 
 .input_wrap {
+  display: flex;
   position: relative;
   width: 400px;
   height: 46px;
@@ -49,10 +50,20 @@
 .input_wrap img {
   position: relative;
   top: 30%;
-  right: 15px;
+  right: 20px;
   transform: translateY(-50%);
   width: 19px;
   height: 19px;
+}
+
+.input_wrap button {
+  position: absolute;
+  right: 20;
+  height: 40px;
+  border: none;
+  color: white;
+  padding: 0 10px;
+  cursor: pointer;
 }
 
 .menu {

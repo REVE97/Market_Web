@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Product } from '../products/product';
 import styles from "../main/main.module.css";
 import { EventBanner } from "../eventBanner/eventBanner";
 
 export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
+  
   const { category, provider } = useParams();
+  
+  // 검색 엔진 기능
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const query = searchParams.get("query");
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6; // 페이지에 나타낼 product 제품수 설정
@@ -34,16 +40,21 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
 
   // 필터링된 제품 목록을 생성
   const filteredProducts = products.filter(product => {
-    if (provider) {
+    if (query) {
+      return product.name.toLowerCase().includes(query.toLowerCase());
+    } else if (provider) {
       return product.provider.toLowerCase() === provider.toLowerCase();
-    } else if (category.toLowerCase() === "computer devices") {
+    } else if (category && category.toLowerCase() === "computer devices") {
       const validNames = ["desktop", "notebook", "monitor", "mouse", "keyboard"];
       return validNames.includes(product.name.toLowerCase());
-    } else if (category.toLowerCase() === "digital") {
+    } else if (category && category.toLowerCase() === "digital") {
       const validNames = ["pad", "phone", "smartwatch", "game"];
       return validNames.includes(product.name.toLowerCase());
+    } else if (category && category.toLowerCase() === "brand") {
+      const validProviders = ["apple", "samsung", "lg"];
+      return validProviders.includes(product.provider.toLowerCase());
     } else {
-      return product.name.toLowerCase() === category.toLowerCase();
+      return category && product.name.toLowerCase() === category.toLowerCase();
     }
   });
 
