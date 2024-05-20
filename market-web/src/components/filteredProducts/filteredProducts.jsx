@@ -38,7 +38,7 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
     }
   };
 
-  // 필터링된 제품 목록을 생성
+  // 필터링된 제품 목록을 생성 ( 카테고리 )
   const filteredProducts = products.filter(product => {
     if (query) {
       return product.name.toLowerCase().includes(query.toLowerCase());

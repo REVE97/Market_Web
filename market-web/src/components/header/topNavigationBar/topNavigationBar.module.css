@@ -49,17 +49,17 @@
 
 .input_wrap img {
   position: relative;
-  top: 30%;
-  right: 20px;
+  top: 40%;
+  right: 30px;
   transform: translateY(-50%);
-  width: 19px;
-  height: 19px;
+  width: 34px;
+  height: 34px;
 }
 
 .input_wrap button {
   position: absolute;
   right: 20;
-  height: 40px;
+  height: 45px;
   border: none;
   color: white;
   padding: 0 10px;
