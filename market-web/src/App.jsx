@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Product from "./pages/product";
 import { Sidebar } from "./components/sidebar/sidebar.jsx";
 import { useState } from "react";
+import { FilteredProducts } from "./components/filteredProducts/filteredProducts.jsx";
 
 function App() {
   
@@ -25,6 +26,8 @@ function App() {
           
         <div className="others">
         <Routes>
+          
+          {/* 기본 메인 페이지 */}
           <Route path="/" element={
           <Home 
             products = {products} 
@@ -32,7 +35,13 @@ function App() {
             convertPrice = {convertPrice} />
           } 
           />
+          
+          {/* 제품 상세 페이지 */}
           <Route path="/product/:id" element={<Product />} />
+
+          {/* 제품 종류별 카테고리 */}
+          <Route path="/:category" element={<FilteredProducts products={products} setProducts={setProducts} convertPrice={convertPrice} />} />
+          
         </Routes>
         </div>
 

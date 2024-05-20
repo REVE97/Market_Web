@@ -25,6 +25,7 @@ export const Chart = ({ title, data, dataKey, grid }) => {
                     <Tooltip />
                     {grid &&<CartesianGrid stroke="gray" strokeDasharray="2 2" />}
 
+                    {/* 평균값 그래프 */}
                     <ReferenceLine y={average} stroke="blue" strokeDasharray="3 3" />   
                 </LineChart>
             </ResponsiveContainer>

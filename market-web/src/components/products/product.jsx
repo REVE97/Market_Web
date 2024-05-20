@@ -20,7 +20,7 @@ export const Product = ( {product, convertPrice} ) => {
 
         <div className={styles.product_price}>
           <span className={styles.price}>{convertPrice(product.price)}</span>
-          <span className={styles.unit}>원<img src="images/icon-up.svg" alt="arrow" /></span>
+          <span className={styles.unit}>원</span>
         </div>
       </div>
     </div>

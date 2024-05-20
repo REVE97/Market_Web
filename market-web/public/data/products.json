@@ -2,21 +2,21 @@
   "products": [
     {
       "id": 1,
-      "name": "Macbook Air",
+      "name": "NOTEBOOK",
       "provider": "APPLE",
       "price": 1300000,
       "image": "/images/macbook.png"
     },
     {
       "id": 2,
-      "name": "IPAD",
+      "name": "PAD",
       "provider": "APPLE",
       "price": 1100000,
       "image": "/images/ipad.png"
     },
     {
       "id": 3,
-      "name": "IPHONE",
+      "name": "PHONE",
       "provider": "APPLE",
       "price": 1500000,
       "image": "/images/iphone.png"
@@ -58,11 +58,10 @@
     },
     {
       "id": 9,
-      "name": "SWITCH GAME",
+      "name": "GAME",
       "provider": "NINTENDO",
       "price": 63900,
       "image": "/images/game.png"
     }
-    
   ]
 }
