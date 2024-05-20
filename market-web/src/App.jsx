@@ -42,6 +42,14 @@ function App() {
           {/* 제품 종류별 카테고리 */}
           <Route path="/:category" element={<FilteredProducts products={products} setProducts={setProducts} convertPrice={convertPrice} />} />
           
+          {/* 제품 브랜드별 카테고리 */}
+          <Route path="/provider/:provider" element={
+              <FilteredProducts 
+                products={products} 
+                setProducts={setProducts} 
+                convertPrice={convertPrice} />} 
+          />
+
         </Routes>
         </div>
 

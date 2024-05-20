@@ -68,19 +68,23 @@ export const Sidebar = () => {
 
                 </ul>
 
-                <h3 className='sidebarTitle'><Link className="sidebarTitle" to={'/brand'}>Brand</Link></h3>
+                <h3 className='sidebarTitle'><Link className="sidebarTitle" to={'/'}>Brand</Link></h3>
                 <ul className='sidebarList'>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-apple.svg" alt="apple" />
-                       <Link className="sidebarLink" to={'/apple'}>APPLE</Link>
+                       <Link className="sidebarLink" to={'/provider/apple'}>APPLE</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-samsung.svg" alt="samsung" />
-                       <Link className="sidebarLink" to={'/samsung'}>SAMSUNG</Link>
+                       <Link className="sidebarLink" to={'/provider/samsung'}>SAMSUNG</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-lg.png" alt="lg" />
-                       <Link className="sidebarLink" to={'/lg'}>LG</Link>
+                       <Link className="sidebarLink" to={'/provider/lg'}>LG</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <img src="/images/icon-nintendo.svg" alt="nintendo" />
+                       <Link className="sidebarLink" to={'/provider/nintendo'}>NINTENDO</Link>
                     </li>
 
                 </ul>
