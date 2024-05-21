@@ -46,6 +46,7 @@ export const userData = [
     }
 ]
 
+// BarChart 데이터
 export const parseData = [
     {
         "name" : "하이브보통주",

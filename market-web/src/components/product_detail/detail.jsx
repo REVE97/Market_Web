@@ -1,9 +1,13 @@
 import { useParams } from "react-router-dom";
-import styles from "./detail.module.css";
 import { useEffect, useState } from "react";
+import styles from "./detail.module.css";
 import axios from "axios";
+
 import { Chart } from '../chart/chart.jsx'
 import { userData } from '../../Data.js';
+
+import { BarChart } from '../barchart/barchart.jsx'
+import { parseData } from "../../Data.js";
 
 export const Detail = ( {convertPrice}) => {
   
@@ -51,6 +55,12 @@ export const Detail = ( {convertPrice}) => {
         grid
         dataKey="Price"
       ></Chart>
+
+      <hr></hr>
+
+      <BarChart
+        data={parseData}
+      ></BarChart>
       
     </>
   );
