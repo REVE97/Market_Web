@@ -41,7 +41,7 @@ export const TopNavigationBar = () => {
           </form>
         </div>
       </div>
-
+   
       <div className={styles.menu}>
         <Link to="/">
           <div className={styles.mypage}>
