@@ -29,6 +29,9 @@ export const Chart = ({ title, data, dataKey, grid }) => {
                     <ReferenceLine y={average} stroke="blue" strokeDasharray="3 3" />   
                 </LineChart>
             </ResponsiveContainer>
+
         </div>
+
+        
     )
 }

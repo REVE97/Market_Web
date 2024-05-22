@@ -51,6 +51,7 @@ export const BarChart = ({ title, data, dataKey, grid }) => {
           </Bar>
         
         </RechartsBarChart>
+      
       </ResponsiveContainer>
     </div>
   );

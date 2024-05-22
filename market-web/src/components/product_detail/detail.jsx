@@ -4,10 +4,10 @@ import styles from "./detail.module.css";
 import axios from "axios";
 
 import { Chart } from '../chart/chart.jsx'
-import { userData } from '../../Data.js';
+import { userData } from '../../ChartData.js';
 
 import { BarChart } from '../barchart/barchart.jsx'
-import { parseData } from "../../Data.js";
+import { parseData } from "../../ChartData.js";
 
 export const Detail = ( {convertPrice}) => {
   
