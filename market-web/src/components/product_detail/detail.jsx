@@ -49,17 +49,22 @@ export const Detail = ( {convertPrice}) => {
       
       <hr></hr>
       
+      {/* LineCharts 그래프 */}
       <Chart
         data={userData}
-        title="Price Charts"
+        title="Price LineCharts"
         grid
         dataKey="Price"
       ></Chart>
 
       <hr></hr>
 
+      {/* BarCharts 그래프 */}
       <BarChart
         data={parseData}
+        title="Price BarCharts"
+        grid
+        datekey="date,openClose,highLow"
       ></BarChart>
       
     </>

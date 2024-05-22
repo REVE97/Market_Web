@@ -13,7 +13,7 @@ export const Chart = ({ title, data, dataKey, grid }) => {
     const average = calculateAverage(data, dataKey);
 
     return (
-        <div className='chart'>charts
+        <div className='chart'>Linecharts
             <h3 className='chartTitle'>{title}</h3>
             <ResponsiveContainer width="100%" aspect={4 / 1}>
                 <LineChart data={data}>

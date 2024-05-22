@@ -49,25 +49,21 @@ export const userData = [
 // BarChart 데이터
 export const parseData = [
     {
-        "name" : "하이브보통주",
         "date" : "2024.03.04",
         "openClose" : [192700,199200],
         "highLow"	: [192300,202000]
     },
     {
-        "name" : "하이브보통주",
         "date" : "2024.03.05",
         "openClose" : [199200,195200],
         "highLow"	: [192300,202000]
     },
     {
-        "name" : "하이브보통주",
         "date" : "2024.03.06",
         "openClose" : [195200,196200],
         "highLow"	: [192300,202000]
     },
     {
-        "name" : "하이브보통주",
         "date" : "2024.03.07",
         "openClose" : [196200,193200],
         "highLow"	: [192300,202000]
