@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styles from "./detail.module.css";
 import axios from "axios";
 
-import { Chart } from '../chart/chart.jsx'
+import { Chart } from '../linechart/linechart.jsx'
 import { userData } from '../../ChartData.js';
 
 import { BarChart } from '../barchart/barchart.jsx'

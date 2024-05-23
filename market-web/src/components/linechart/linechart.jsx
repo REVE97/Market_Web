@@ -1,5 +1,5 @@
 import React from 'react'
-import './chart.css'
+import './linechart.css'
 import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer,ReferenceLine } from 'recharts'  // YAxis, Legend 필요할 시 추가
 
 export const Chart = ({ title, data, dataKey, grid }) => {
