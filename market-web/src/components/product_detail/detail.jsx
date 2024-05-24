@@ -33,10 +33,10 @@ export const Detail = ( {convertPrice}) => {
             <p className={styles.seller_store}>{product.provider}</p>
             <p className={styles.product_name}>{product.name}</p>
             <span className={styles.price}>
-              {new Intl.NumberFormat().format(product.price)}
+              Cost Price : {new Intl.NumberFormat().format(product.price)}
               <span className={styles.unit}>원</span>
             </span>
-            
+        
             {/* 구매 링크 */}
             <button 
             className={styles.buyButton} 

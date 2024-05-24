@@ -20,7 +20,7 @@ export const BarChart = ({ title, data, dataKey, grid }) => {
   const filterData = () => {
     if (selectedPeriod === '전체') return data;
     const now = new Date(data[data.length - 1].date); // 마지막 날을 기준으로 설정
-    const periodDays = selectedPeriod === '7일' ? 6 : 29;
+    const periodDays = selectedPeriod === '7일' ? 6 : 29;  // 기간 설정 +1
     return data.filter((entry) => {
       const entryDate = new Date(entry.date);
       const timeDiff = now - entryDate;

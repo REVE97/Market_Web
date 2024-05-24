@@ -20,7 +20,7 @@ export const Chart = ({ title, data, dataKey, grid }) => {
                     
                     <XAxis dataKey="name" stroke='black' />
                     
-                    <Line type="linear" dataKey={dataKey} stroke="red" />
+                    <Line type="step" dataKey={dataKey} stroke="red" />
                     
                     <Tooltip />
                     {grid &&<CartesianGrid stroke="gray" strokeDasharray="2 2" />}
