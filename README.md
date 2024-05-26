@@ -1,6 +1,6 @@
 # Real-time Price Information Web Page Project
 ### 5.16 => recharts 모듈 설치 : npm install recharts --legacy-peer-deps
-### 5.18 => feedback : 
+### 5.18 => Mentoring Feedback : 
 1. 시각화 요소 추가 
 2. 브랜드 카테고리 추가 (완료)
 3. 평균값 그래프 추가 (완료)
@@ -14,3 +14,9 @@
 ### 5.23 ~ Todo
 1. DB 에서 연동할 데이터 수정 
 2. Cart 기능 추가
+
+### 5.24 => Mentoring Feedback :
+1. 제품 상세페이지에 자세한 상품정보 추가
+2. 찜목록 추가
+3. 사이드바 네비게이션 개선
+4. DB 와의 연동작업
