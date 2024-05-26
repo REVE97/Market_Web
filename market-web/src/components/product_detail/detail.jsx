@@ -14,11 +14,25 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
   const {id} = useParams();
   const [product, setProduct] = useState({});
 
+  // 데이터 연동
   useEffect(() => {
     axios.get("/data/products.json").then((data) => {
       setProduct(data.data.products.find((product) => product.id === parseInt(id)))
     });
   }, [id]);
+
+
+  // 찜목록 기능 
+  const handleCart = () => {
+    const cartItem = {
+      id: product.id,
+      image: product.image,
+      name: product.name,
+      provider: product.provider,
+      price: product.price
+    };
+    setCart([...cart, cartItem]);
+  };
 
   return (
     <>
@@ -46,9 +60,9 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
 
             {/* 찜목록 버튼 */}
             <button 
-            className={styles.favorite}>찜목록
+            className={styles.favorite} onClick={ () => handleCart()}>찜목록
             </button>
-            
+
           </div>
         </section>
       </main>

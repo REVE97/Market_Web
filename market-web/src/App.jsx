@@ -20,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
     
-        <TopNavigationBar />
+        <TopNavigationBar cart={cart} />
         
         <hr></hr><br></br>
       
@@ -68,7 +68,9 @@ function App() {
             />
 
           {/* 찜목록 페이지 생성 */}
-          <Route path="/cart" element={<Basket />} />
+          <Route path="/favorite" element={
+          <Basket cart={cart} setCart={setCart} convertPrice={convertPrice} />} 
+          />
 
         </Routes>
         </div>

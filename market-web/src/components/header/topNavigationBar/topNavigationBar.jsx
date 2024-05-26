@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./topNavigationBar.module.css";
 
-export const TopNavigationBar = () => {
+export const TopNavigationBar = ( {cart} ) => {
   
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
@@ -50,10 +50,17 @@ export const TopNavigationBar = () => {
           </div>
         </Link>
 
-        <Link to="/cart">
+        {/* 찜목록 페이지 */}
+        <Link to="/favorite">
           <div className={styles.mypage}>
             <img src="/images/icon-favorite.svg" alt="cart" />
             <span>찜목록</span>
+            {cart.length >= 1 ? (
+              <div className={styles.new_shopping_cart}>
+                <p>{cart.length}</p>
+              </div>
+            ) : ("")}
+          
           </div>
         </Link>
 
