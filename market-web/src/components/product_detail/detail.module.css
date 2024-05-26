@@ -176,39 +176,6 @@
   color: #19ce60;
 }
 
-.btn .btn_buy {
-  width: 416px;
-  height: 60px;
-  border-radius: 5px;
-  background: #19ce60;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 22px;
-  color: #ffffff;
-  margin-right: 44px;
-}
-
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.btn .btn_cart {
-  width: 200px;
-  height: 60px;
-  border-radius: 5px;
-  background: #767676;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 22px;
-  color: #ffffff;
-}
-
 .desc {
   margin-top: 140px;
 }
@@ -286,3 +253,17 @@
 .buyButton:hover {
   background-color: gray;
 }
+
+/* 찜목록 버튼 CSS */
+.favorite {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+ .favorite:hover {
+  background-color: gray;
+ }

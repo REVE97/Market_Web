@@ -50,9 +50,9 @@ export const TopNavigationBar = () => {
           </div>
         </Link>
 
-        <Link to="/">
+        <Link to="/cart">
           <div className={styles.mypage}>
-            <img src="/images/icon-favorite.svg" alt="favorite" />
+            <img src="/images/icon-favorite.svg" alt="cart" />
             <span>찜목록</span>
           </div>
         </Link>

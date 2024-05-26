@@ -9,7 +9,7 @@ import { userData } from '../../ChartData.js';
 import { BarChart } from '../barchart/barchart.jsx'
 import { parseData } from "../../ChartData.js";
 
-export const Detail = ( {convertPrice}) => {
+export const Detail = ( {convertPrice, cart, setCart}) => {
   
   const {id} = useParams();
   const [product, setProduct] = useState({});
@@ -37,12 +37,18 @@ export const Detail = ( {convertPrice}) => {
               <span className={styles.unit}>원</span>
             </span>
         
-            {/* 구매 링크 */}
+            {/* 구매 링크 버튼*/}
             <button 
             className={styles.buyButton} 
             onClick={() => window.location.href = "http://coupang.com"}>
             구매하기
             </button>
+
+            {/* 찜목록 버튼 */}
+            <button 
+            className={styles.favorite}>찜목록
+            </button>
+            
           </div>
         </section>
       </main>

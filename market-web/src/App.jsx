@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { TopNavigationBar } from "./components/header/topNavigationBar/topNavigationBar";
 import Home from "./pages/home";
 import Product from "./pages/product";
+import Basket  from "./pages/basket.jsx";
 import { Sidebar } from "./components/sidebar/sidebar.jsx";
 import { useState } from "react";
 import { FilteredProducts } from "./components/filteredProducts/filteredProducts.jsx";
@@ -13,6 +14,8 @@ function App() {
   const convertPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");   // 천원 단위로 가격표시
   }
+
+  const [cart, setCart] = useState([]);
 
   return (
     <BrowserRouter>
@@ -37,7 +40,7 @@ function App() {
           />
           
           {/* 제품 상세 페이지 */}
-          <Route path="/product/:id" element={<Product />} />
+          <Route path="/product/:id" element={<Product cart={cart} setCart={setCart} />} />
 
           {/* 제품 종류별 카테고리 */}
           <Route path="/:category" element={
@@ -63,6 +66,9 @@ function App() {
                 convertPrice={convertPrice} />
             } 
             />
+
+          {/* 찜목록 페이지 생성 */}
+          <Route path="/cart" element={<Basket />} />
 
         </Routes>
         </div>
