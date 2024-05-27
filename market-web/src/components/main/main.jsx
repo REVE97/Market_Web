@@ -23,10 +23,10 @@ export const Main = ({ products, setProducts, convertPrice }) => {
       newProduct.sort(( a, b ) => a.id - b.id);
       setProducts(newProduct);
     } else if ( type === "row" ) {
-      newProduct.sort(( a, b ) => a.price - b.price);
+      newProduct.sort(( a, b ) => a.origin_price - b.origin_price);
       setProducts(newProduct);
     } else if ( type === "high" ) {
-      newProduct.sort(( a, b ) => b.price - a.price);
+      newProduct.sort(( a, b ) => b.origin_price - a.origin_price);
       setProducts(newProduct);
     }
   }

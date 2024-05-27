@@ -49,11 +49,11 @@ export const Sidebar = () => {
                 <ul className='sidebarList'>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-tablet.svg" alt="tablet" />
-                       <Link className="sidebarLink" to={'/pad'}>PAD</Link>
+                       <Link className="sidebarLink" to={'/tablet'}>TABLET</Link>
                     </li>
                     <li className='sidebarListItem'>
-                       <img src="/images/icon-phone.svg" alt="phone" />
-                       <Link className="sidebarLink" to={'/phone'}>PHONE</Link>
+                       <img src="/images/icon-phone.svg" alt="smartphone" />
+                       <Link className="sidebarLink" to={'/smartphone'}>SMARTPHONE</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-watch.svg" alt="watch" />
@@ -72,19 +72,19 @@ export const Sidebar = () => {
                 <ul className='sidebarList'>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-apple.svg" alt="apple" />
-                       <Link className="sidebarLink" to={'/provider/apple'}>APPLE</Link>
+                       <Link className="sidebarLink" to={'/brand_name/apple'}>APPLE</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-samsung.svg" alt="samsung" />
-                       <Link className="sidebarLink" to={'/provider/samsung'}>SAMSUNG</Link>
+                       <Link className="sidebarLink" to={'/brand_name/samsung'}>SAMSUNG</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-lg.png" alt="lg" />
-                       <Link className="sidebarLink" to={'/provider/lg'}>LG</Link>
+                       <Link className="sidebarLink" to={'/brand_name/lg'}>LG</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-nintendo.svg" alt="nintendo" />
-                       <Link className="sidebarLink" to={'/provider/nintendo'}>NINTENDO</Link>
+                       <Link className="sidebarLink" to={'/brand_name/nintendo'}>NINTENDO</Link>
                     </li>
 
                 </ul>

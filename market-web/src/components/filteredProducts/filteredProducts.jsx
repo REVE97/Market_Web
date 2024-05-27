@@ -7,7 +7,7 @@ import { EventBanner } from "../eventBanner/eventBanner";
 
 export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   
-  const { category, provider } = useParams();
+  const { category, brand_name } = useParams();
   
   // 검색 엔진 기능
   const location = useLocation();
@@ -30,10 +30,10 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
       newProduct.sort((a, b) => a.id - b.id);
       setProducts(newProduct);
     } else if (type === "row") {
-      newProduct.sort((a, b) => a.price - b.price);
+      newProduct.sort((a, b) => a.origin_price - b.origin_price);
       setProducts(newProduct);
     } else if (type === "high") {
-      newProduct.sort((a, b) => b.price - a.price);
+      newProduct.sort((a, b) => b.origin_price - a.origin_price);
       setProducts(newProduct);
     }
   };
@@ -41,20 +41,20 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   // 필터링된 제품 목록을 생성 ( 카테고리 )
   const filteredProducts = products.filter(product => {
     if (query) {
-      return product.name.toLowerCase().includes(query.toLowerCase());
-    } else if (provider) {
-      return product.provider.toLowerCase() === provider.toLowerCase();
+      return product.title.toLowerCase().includes(query.toLowerCase());
+    } else if (brand_name) {
+      return product.brand_name.toLowerCase() === brand_name.toLowerCase();
     } else if (category && category.toLowerCase() === "computer devices") {
       const validNames = ["desktop", "notebook", "monitor", "mouse", "keyboard"];
-      return validNames.includes(product.name.toLowerCase());
+      return validNames.includes(product.title.toLowerCase());
     } else if (category && category.toLowerCase() === "digital") {
-      const validNames = ["pad", "phone", "smartwatch", "game"];
-      return validNames.includes(product.name.toLowerCase());
+      const validNames = ["tablet", "phone", "smartwatch", "game"];
+      return validNames.includes(product.title.toLowerCase());
     } else if (category && category.toLowerCase() === "brand") {
       const validProviders = ["apple", "samsung", "lg"];
-      return validProviders.includes(product.provider.toLowerCase());
+      return validProviders.includes(product.brand_name.toLowerCase());
     } else {
-      return category && product.name.toLowerCase() === category.toLowerCase();
+      return category && product.title.toLowerCase() === category.toLowerCase();
     }
   });
 

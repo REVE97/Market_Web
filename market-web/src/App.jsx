@@ -11,8 +11,8 @@ import { FilteredProducts } from "./components/filteredProducts/filteredProducts
 function App() {
   
   const [products, setProducts] = useState([]);
-  const convertPrice = (price) => {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");   // 천원 단위로 가격표시
+  const convertPrice = (origin_price) => {
+    return origin_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");   // 천원 단위로 가격표시
   }
 
   const [cart, setCart] = useState([]);
@@ -51,7 +51,7 @@ function App() {
           />
           
           {/* 제품 브랜드별 카테고리 */}
-          <Route path="/provider/:provider" element={
+          <Route path="/brand_name/:brand_name" element={
               <FilteredProducts 
                 products={products} 
                 setProducts={setProducts} 

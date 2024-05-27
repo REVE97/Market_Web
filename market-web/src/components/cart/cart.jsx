@@ -32,7 +32,6 @@ export const Cart = ( { cart, setCart, convertPrice } ) => {
         })
       )}
       
-
     </>
   );
 };

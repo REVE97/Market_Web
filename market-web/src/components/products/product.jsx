@@ -7,19 +7,19 @@ export const Product = ( {product, convertPrice} ) => {
       <div className={styles.product_item}>
       <Link to={`/product/${product.id}`}>
           <div className={styles.product_image}>
-            <img src={product.image} alt="product" />
+            <img src={product.img_url} alt="product" />
           </div>
         </Link>
         <div className={styles.store}>
-          <span>{product.provider}</span>
+          <span>{product.brand_name}</span>
         </div>
 
         <div className={styles.product_name}>
-          <span>{product.name}</span>
+          <span>{product.title}</span>
         </div>
 
         <div className={styles.product_price}>
-          <span className={styles.price}>{convertPrice(product.price)}</span>
+          <span className={styles.price}>{convertPrice(product.origin_price)}</span>
           <span className={styles.unit}>원</span>
         </div>
       </div>

@@ -26,10 +26,10 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
   const handleCart = () => {
     const cartItem = {
       id: product.id,
-      image: product.image,
-      name: product.name,
-      provider: product.provider,
-      price: product.price
+      image: product.img_url,
+      name: product.title,
+      provider: product.brand_name,
+      price: product.origin_price
     };
     setCart([...cart, cartItem]);
   };
@@ -39,15 +39,15 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
       <main className={styles.main}>
         <section className={styles.product}>
           <div className={styles.product_img}>
-            <img src={product.image} alt="product" />
+            <img src={product.img_url} alt="product" />
           </div>
         </section>
         <section className={styles.product}>
           <div className={styles.product_info}>
-            <p className={styles.seller_store}>{product.provider}</p>
-            <p className={styles.product_name}>{product.name}</p>
+            <p className={styles.seller_store}>{product.brand_name}</p>
+            <p className={styles.product_name}>{product.title}</p>
             <span className={styles.price}>
-              Cost Price : {new Intl.NumberFormat().format(product.price)}
+              Origin Price : {new Intl.NumberFormat().format(product.origin_price)}
               <span className={styles.unit}>원</span>
             </span>
         

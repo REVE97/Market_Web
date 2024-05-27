@@ -11,8 +11,8 @@ export const CartList = ( { cart, convertPrice, handleRemove } ) => {
   };
 
     return (
-        
-        // 찜목록 제품목록
+      
+      // 찜목록 제품목록
       <section className={styles.cart_product_list}>
         <input type="checkbox" />
         <div className={styles.cart_product_wrap}>

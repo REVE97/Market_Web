@@ -2,80 +2,140 @@
   "products": [
     {
       "id": 1,
-      "name": "NOTEBOOK",
-      "provider": "APPLE",
-      "price": 1300000,
-      "image": "/images/macbook.png"
+      "categoryId": 1,
+      "title": "NOTEBOOK",
+      "brand_name": "APPLE",
+      "brand_id":"",
+      "origin_price": 1300000,
+      "img_url": "/images/macbook.png",
+      "url":"",
+      "prod_option":"",
+      "description":"",
+      "rating":"",
+      "delivery":""
     },
     {
       "id": 2,
-      "name": "PAD",
-      "provider": "APPLE",
-      "price": 1100000,
-      "image": "/images/ipad.png"
+      "categoryId": 2,
+      "title": "DESKTOP",
+      "brand_name": "APPLE",
+      "brand_id":"",
+      "origin_price": 1835820,
+      "img_url": "/images/desktop.png",
+      "url":"",
+      "prod_option":"",
+      "description":"",
+      "rating":"",
+      "delivery":""
     },
     {
       "id": 3,
-      "name": "PHONE",
-      "provider": "APPLE",
-      "price": 1500000,
-      "image": "/images/iphone.png"
+      "categoryId": 3,
+      "title": "MONITOR",
+      "brand_name": "APPLE",
+      "brand_id":"",
+      "origin_price": 2490000,
+      "img_url": "/images/monitor.png",
+      "url":"",
+      "prod_option":"",
+      "description":"",
+      "rating":"",
+      "delivery":""
     },
     {
       "id": 4,
-      "name": "DESKTOP",
-      "provider": "APPLE",
-      "price": 1835820,
-      "image": "/images/desktop.png"
+      "categoryId": 4,
+      "title": "KEYBOARD",
+      "brand_name": "APPLE",
+      "brand_id":"",
+      "origin_price": 153050,
+      "img_url": "/images/keyboard.png",
+      "url":"",
+      "prod_option":"",
+      "description":"",
+      "rating":"",
+      "delivery":""
     },
     {
       "id": 5,
-      "name": "MONITOR",
-      "provider": "APPLE",
-      "price": 2490000,
-      "image": "/images/monitor.png"
+      "categoryId": 5,
+      "title": "MOUSE",
+      "brand_name": "APPLE",
+      "brand_id":"",
+      "origin_price": 82770,
+      "img_url": "/images/mouse.png",
+      "url":"",
+      "prod_option":"",
+      "description":"",
+      "rating":"",
+      "delivery":""
     },
     {
       "id": 6,
-      "name": "KEYBOARD",
-      "provider": "APPLE",
-      "price": 153050,
-      "image": "/images/keyboard.png"
+      "categoryId": 6,
+      "title": "SMARTPHONE",
+      "brand_name": "APPLE",
+      "brand_id":"",
+      "origin_price": 1500000,
+      "img_url": "/images/iphone.png",
+      "url":"",
+      "prod_option":"",
+      "description":"",
+      "rating":"",
+      "delivery":""
     },
     {
       "id": 7,
-      "name": "MOUSE",
-      "provider": "APPLE",
-      "price": 82770,
-      "image": "/images/mouse.png"
+      "categoryId": 7,
+      "title": "TABLET",
+      "brand_name": "APPLE",
+      "brand_id":"",
+      "origin_price": 1100000,
+      "img_url": "/images/tablet.png",
+      "url":"",
+      "prod_option":"",
+      "description":"",
+      "rating":"",
+      "delivery":""
     },
     {
       "id": 8,
-      "name": "SMARTWATCH",
-      "provider": "APPLE",
-      "price": 499900,
-      "image": "/images/smartwatch.png"
+      "categoryId": 8,
+      "title": "SMARTWATCH",
+      "brand_name": "APPLE",
+      "brand_id":"",
+      "origin_price": 499900,
+      "img_url": "/images/smartwatch.png",
+      "url":"",
+      "prod_option":"",
+      "description":"",
+      "rating":"",
+      "delivery":""
     },
     {
       "id": 9,
-      "name": "GAME",
-      "provider": "NINTENDO",
-      "price": 63900,
-      "image": "/images/game.png"
-    },
+      "categoryId": 9,
+      "title": "GAME",
+      "brand_name": "NINTENDO",
+      "brand_id":"",
+      "origin_price": 63900,
+      "img_url": "/images/game.png",
+      "url":"",
+      "prod_option":"",
+      "description":"",
+      "rating":"",
+      "delivery":""
+    }
+  ],
+
+  "price" : [
     {
-      "id": 10,
-      "name": "NOTEBOOK",
-      "provider": "SAMSUNG",
-      "price": 1888000,
-      "image": "/images/notebook_samsung.png"
-    },
-    {
-      "id": 11,
-      "name": "NOTEBOOK",
-      "provider": "LG",
-      "price": 1129000,
-      "image": "/images/notebook_lg.png"
+      "origin_price":"",
+      "sale_price":"",
+      "coupon_price":"",
+      "discount_rate":""
     }
   ]
 }
+
+
