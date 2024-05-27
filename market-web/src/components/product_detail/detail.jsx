@@ -51,17 +51,20 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
               <span className={styles.unit}>원</span>
             </span>
         
-            {/* 구매 링크 버튼*/}
-            <button 
-            className={styles.buyButton} 
-            onClick={() => window.location.href = "http://coupang.com"}>
-            구매하기
-            </button>
+            <div className={styles.buttonContainer}>             
+              {/* 구매 링크 버튼*/}
+              <button 
+              className={styles.buyButton} 
+              onClick={() => window.location.href = "http://coupang.com"}>
+              구매하기
+              </button>
 
-            {/* 찜목록 버튼 */}
-            <button 
-            className={styles.favorite} onClick={ () => handleCart()}>찜목록
-            </button>
+              {/* 찜목록 버튼 */}
+              <button 
+              className={styles.favorite} onClick={ () => handleCart()}>
+              찜목록
+              </button>              
+            </div>
 
           </div>
         </section>

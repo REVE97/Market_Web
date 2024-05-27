@@ -1,11 +1,19 @@
 import styles from "./cart.module.css"
+import { useNavigate } from 'react-router-dom';
 
 export const CartList = ( { cart, convertPrice, handleRemove } ) => {
+
+
+  // 찜목록에서 제품 페이지 버튼 클릭시 해당 제품 페이지 이동
+  const navigate = useNavigate();
+  const handlePageButtonClick = () => {
+        navigate(`/product/${cart.id}`);
+  };
 
     return (
         
         // 찜목록 제품목록
-        <section className={styles.cart_product_list}>
+      <section className={styles.cart_product_list}>
         <input type="checkbox" />
         <div className={styles.cart_product_wrap}>
           
@@ -20,6 +28,11 @@ export const CartList = ( { cart, convertPrice, handleRemove } ) => {
           </div>
 
         </div>
+
+        {/* 제품 페이지로 이동하는 버튼 */}
+        <button className={styles.page_button} onClick={handlePageButtonClick}>
+          제품 페이지
+        </button>
 
         {/* 찜목록 삭제 */}
         <div className={styles.product_remove} 

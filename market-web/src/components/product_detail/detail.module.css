@@ -64,116 +64,11 @@
   color: #000000;
 }
 
-.delivery {
-  width: 150px;
-  height: 20px;
-  margin-bottom: 20px;
-}
-
-.delivery p {
-  font-size: 16px;
-  line-height: 20px;
-  color: #767676;
-}
-
 .line {
   width: 600px;
   height: 2px;
   background: #c4c4c4;
   margin-bottom: 30px;
-}
-
-.amount {
-  position: relative;
-  width: 150px;
-  height: 50px;
-  border: 1px solid #c4c4c4;
-  border-radius: 5px;
-  margin-bottom: 30px;
-}
-
-.amount .minus {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.amount .count {
-  position: absolute;
-  width: 56px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #c4c4c4;
-  border-top:none;
-  border-bottom:none;
-}
-
-.amount .count span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.amount .plus {
-  position: absolute;
-  width: 20px;
-  height: 40px;
-  top: 50%;
-  right: 14px;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
-
-.sum {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.sum .sum_price {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 23px;
-  color: #000000;
-}
-
-.sum .total {
-  font-size: 18px;
-  line-height: 23px;
-  color: #767676;
-}
-
-.sum .total_count {
-  font-size: 18px;
-  line-height: 23px;
-  color: #19ce60;
-}
-
-.sum .total_count::after {
-  content: "|";
-  width: 5px;
-  height: 23px;
-  color: #c4c4c4;
-  padding: 0px 11px;
-}
-
-.sum .total_price {
-  font-size: 36px;
-  line-height: 45px;
-  color: #19ce60;
-}
-
-.sum .total_unit {
-  font-size: 18px;
-  line-height: 23px;
-  color: #19ce60;
 }
 
 .desc {
@@ -190,14 +85,6 @@
     margin: 0;
     padding: 20px;
     padding-bottom: 0;
-  }
-
-  .sum .total_price {
-    font-size: 24px;
-  }
-
-  .sum .sum_price {
-    margin-right: 24px;
   }
 
   .btn {
@@ -228,16 +115,18 @@
   }
 
   .product_info .product_name,
-  .product_info .price,
-  .sum .total_price {
+  .product_info .price
+  {
     font-size: 20px;
   }
 
-  .sum {
-    display: block;
-  }
+ 
 }
 
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
 
 /* 구매하기 버튼 CSS */
 .buyButton {
@@ -248,6 +137,7 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  width: 50%;
 }
 
 .buyButton:hover {
@@ -263,6 +153,7 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  width: 50%;
 }
  .favorite:hover {
   background-color: gray;

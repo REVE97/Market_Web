@@ -11,9 +11,11 @@ export const Cart = ( { cart, setCart, convertPrice } ) => {
   return (
     <>
       <header className={styles.header}>
-        <h1>찜목록</h1>
+        <h1>List</h1>
       </header>
-      
+
+      <br /><hr />
+    
       {cart.length === 0 ? (
         <div className={styles.not}>
           <h2>찜목록에 아무것도 없습니다.</h2>

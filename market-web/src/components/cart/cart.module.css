@@ -4,44 +4,7 @@
   justify-content: center;
   max-width: 1280px;
   margin: 0 auto;
-  margin-top: 54px;
-}
-
-.tab_title {
-  max-width: 1280px;
-  height: 60px;
-  border-radius: 10px;
-  background: #f2f2f2;
-  margin: 0 auto;
-  margin-top: 52px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  place-items: center;
-}
-
-.tab_title span {
-  background: #f2f2f2;
-}
-
-.tab_title input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #19ce60;
-  border-radius: 50%;
-  appearance: none;
-  cursor: pointer;
-}
-
-.tab_title input[type="checkbox"]:checked {
-  background: #19ce60;
-  border: none;
-}
-
-.tab_title p {
-  display: none;
-  background: #f2f2f2;
-  font-size: 18px;
-  color: #767676;
+  margin-top: 24px;
 }
 
 /* cartList*/
@@ -261,44 +224,6 @@
   color: #000000;
 }
 
-.pay_minus {
-  position: relative;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #ffffff !important;
-}
-
-.pay_minus img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #ffffff;
-}
-
-.pay_plus {
-  position: relative;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #ffffff !important;
-}
-
-.pay_plus img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #ffffff;
-}
-
 .payment .cart_prouct_payment {
   font-size: 16px;
   font-weight: bold;
@@ -445,4 +370,20 @@
   .cart_product_info {
     width: initial;
   }
+}
+
+/* 찜목록에서 제품 페이지로 가는 버튼 CSS */
+.page_button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 50%;
+}
+
+.page_button:hover {
+  background-color: #c4c4c4;
 }

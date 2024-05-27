@@ -71,14 +71,6 @@
   align-items: center;
 }
 
-.mypage {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
 
 .mypage {
   width: 66px;
@@ -87,7 +79,7 @@
 }
 
 .mypage span {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 14px;
   color: #767676;
 }

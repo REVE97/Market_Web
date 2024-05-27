@@ -31,7 +31,7 @@ export const TopNavigationBar = ( {cart} ) => {
           <form onSubmit={handleSearch}>
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="제품명을 검색하시오..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -43,33 +43,36 @@ export const TopNavigationBar = ( {cart} ) => {
       </div>
    
       <div className={styles.menu}>
-        <Link to="/">
-          <div className={styles.mypage}>
-            <img src="/images/icon-user.svg" alt="user" />
-            <span>마이페이지</span>
-          </div>
-        </Link>
-
+        
         {/* 찜목록 페이지 */}
         <Link to="/favorite">
           <div className={styles.mypage}>
             <img src="/images/icon-favorite.svg" alt="cart" />
             <span>찜목록</span>
+            
             {cart.length >= 1 ? (
               <div className={styles.new_shopping_cart}>
                 <p>{cart.length}</p>
               </div>
             ) : ("")}
-          
           </div>
         </Link>
+        
+        {/* <Link to="/">
+          <div className={styles.mypage}>
+            <img src="/images/icon-user.svg" alt="user" />
+            <span>마이페이지</span>
+          </div>
+        </Link> */}
 
-        <Link to="/">
+
+        {/* <Link to="/">
           <div className={styles.mypage}>
             <img src="/images/icon-power.svg" alt="login" />
             <span>로그인</span>
           </div>
-        </Link>
+        </Link> */}
+        
       </div>
     </header>
   );
