@@ -1,6 +1,10 @@
 # Real-time Price Information Web Page Project
 
-### 2024.5.16 => recharts 모듈 설치 : npm install recharts --legacy-peer-deps
+## Recharts 모듈 설치 : 
+1. npm install recharts --legacy-peer-deps
+####   => 차트 노드 모듈
+2. npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome --legacy-peer-deps
+####   => 제품 리뷰 별점 노드 모듈
 
 ### 2024.5.18 => Mentoring Feedback : 
 1. 시각화 요소 추가 ( BarChart 구현 ) (완료)
@@ -10,17 +14,17 @@
 5. DB name 데이터를 이용해서 검색엔진 구현 (완료)
 
 ### 2024.5.24 => Mentoring Feedback :
-1. 제품 상세페이지에 자세한 상품정보 추가
+1. 제품 상세페이지에 자세한 상품정보 추가 (완료)
 2. Cart 기능 추가 (완료)
 3. 사이드바 네비게이션 개선
 4. DB 와의 연동작업
 
 ### 2024.5.20 ~ 2024.5.23
-1. DB name 데이터를 이용해서 검색엔진 구현 
-2. 시각화 요소 추가 ( BarChart 구현 )
+1. DB name 데이터를 이용해서 검색엔진 구현 (완료)
+2. 시각화 요소 추가 ( BarChart 구현 ) (완료)
 
 ### 2024.5.23 ~ Todo
-1. DB 에서 연동할 데이터 수정 
-2. Cart 기능 추가
-3. 카테고리 필터링 수정 - title 에서 brand_id
+1. DB 에서 연동할 데이터 수정 (완료)
+2. Cart 기능 추가 (완료)
+3. 카테고리 필터링 수정 - title 에서 categoryId
 4. axios 로 api 호출
