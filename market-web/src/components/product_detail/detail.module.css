@@ -8,8 +8,8 @@
 }
 
 .product {
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   margin-right: 50px;
@@ -46,7 +46,6 @@
 
 .product_info .product_name {
   font-size: 26px;
-  font-family: serif;
   line-height: 45px;
   color: #000000;
   margin-bottom: 20px;
@@ -56,7 +55,8 @@
   font-size: 30px;
   line-height: 45px;
   color: #000000;
-  margin-bottom: 58px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .product_info .unit {
@@ -163,12 +163,9 @@
 
 /* 할인률 CSS */
  .discount_rate {
-  background-color: skyblue;
   color: black;
-  border: 2px solid black;
-  border-radius: 4px;
   font-size: 24px;
-  font-family: serif;
+  font-weight: bold;
 }
 
 /* 옵션 CSS */
@@ -179,5 +176,31 @@
   text-align: center;
   background-color: ghostwhite;
   padding: 3px 3px 3px 3px;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
+/* 상품설명 라인 간격 CSS */
+.des_line {
+  margin: 0; /* 모든 마진 제거 */
+  padding: 0; /* 모든 패딩 제거 */
+  line-height: 1.2; /* 줄 간격 조절 (원하는 값으로 설정) */
+}
+
+/* 배송일 CSS */
+.delivery {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* 제품 리뷰 별점 CSS */
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating svg {
+  color: goldenrod;
+  margin-right: 4px; /* 별 사이의 간격 조절 */
+}

@@ -10,6 +10,32 @@ import { userData } from '../../ChartData.js';
 import { BarChart } from '../barchart/barchart.jsx'
 import { parseData } from "../../ChartData.js";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faStarHalfAlt, faStar as farStar } from '@fortawesome/free-solid-svg-icons';
+
+// 제품 리뷰 별점 체크 함수
+const Rating = ({ rating }) => {
+  const validRating = Math.max(0, Math.min(rating, 5));
+  const fullStars = Math.floor(validRating);
+  const hasHalfStar = validRating % 1 >= 0.25 && validRating % 1 <= 0.75;
+  const emptyStars = Math.max(0, 5 - fullStars - (hasHalfStar ? 1 : 0)); 
+
+  const fullStarsArray = Array.from({ length: fullStars });
+  const emptyStarsArray = Array.from({ length: emptyStars });
+
+  return (
+    <div className={styles.rating}>
+      {fullStarsArray.map((_, index) => (
+        <FontAwesomeIcon key={`full-${index}`} icon={faStar} />
+      ))}
+      {hasHalfStar && <FontAwesomeIcon key="half" icon={faStarHalfAlt} />}
+      {emptyStarsArray.map((_, index) => (
+        <FontAwesomeIcon key={`empty-${index}`} icon={farStar} />
+      ))}
+    </div>
+  );
+};
+
 export const Detail = ( {convertPrice, cart, setCart}) => {
   
   const {id} = useParams();
@@ -50,45 +76,62 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
             <p className={styles.seller_store}>{product.brand_name}</p>
             <p className={styles.product_name}>{product.title}</p>
             
+            {/* 제품 리뷰 별점 */}
+            <p className={styles.rating}>RATING : {product.rating} 
+              <Rating rating={product.rating} />
+            </p>
+
+            <hr />
+            
             {/* 가격 정보 */}
             <span className={styles.price}> 
-              Origin Price : 
+              Origin Price : {' '}
+              <span className={styles.discount_rate}>{product.discount_rate}</span>
               <span style={{ textDecoration: 'line-through', opacity: 0.4 }}> 
                  {new Intl.NumberFormat().format(product.origin_price)}
               </span>
               <span className={styles.unit}>원 </span>
-              <span className={styles.discount_rate}>{product.discount_rate}</span>
               <br />
               
-              Coupon Price : 
+              Coupon Price : {' '}
               <span style={{color:'red'}}> 
                  {new Intl.NumberFormat().format(product.coupon_price)}
               </span>
-              <span className={styles.unit}>원 </span>             
+              <span className={styles.unit}>원 </span>           
             
             </span>
+
+            <hr />
+
+            {/* 배송일 정보 */}
+            <span className={styles.delivery}><img src="/images/icon-calendar.svg" alt="calendar" />배송일: {' '}
+              {product.delivery}
+            </span>
+
+            <hr />
 
             {/* 옵션 정보 */}
             <span className={styles.option}>{product.prod_option}</span>
 
             {/* 상품설명 정보 */}
             <span className={styles.description}>
-              {product.description}
+              {(product.description || '').split(',').map((line, index) => (
+                <p key={index} className={styles.des_line}>· {line}</p>
+              ))}
             </span>
 
-        
             <div className={styles.buttonContainer}>             
               {/* 구매 링크 버튼*/}
               <button 
               className={styles.buyButton} 
               onClick={() => window.open(product.url,'_blank')}>
-              구매하기
+              구매링크로 이동
               </button>
 
               {/* 찜목록 버튼 */}
               <button 
               className={styles.favorite} onClick={ () => handleCart()}>
-              찜목록
+              찜목록 추가
               </button>              
             </div>
 
