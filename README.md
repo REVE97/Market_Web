@@ -22,4 +22,5 @@
 ### 2024.5.23 ~ Todo
 1. DB 에서 연동할 데이터 수정 
 2. Cart 기능 추가
-3. 카테고리 필터링 수정 - title 에서 brand_id 
+3. 카테고리 필터링 수정 - title 에서 brand_id
+4. axios 로 api 호출
