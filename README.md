@@ -1,9 +1,9 @@
 # Real-time Price Information Web Page Project
 
-### Recharts 모듈 설치 : 
+## Recharts 모듈 설치 : 
 1. npm install recharts --legacy-peer-deps
 ###   => 차트 노드 모듈
-3. npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome --legacy-peer-deps
+2. npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome --legacy-peer-deps
 ###   => 제품 리뷰 별점 노드 모듈
 
 ### 2024.5.18 => Mentoring Feedback : 
