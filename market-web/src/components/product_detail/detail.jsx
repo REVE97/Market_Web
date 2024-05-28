@@ -1,3 +1,4 @@
+import React from 'react';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "./detail.module.css";
@@ -29,7 +30,7 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
       image: product.img_url,
       name: product.title,
       provider: product.brand_name,
-      price: product.origin_price
+      price: product.coupon_price
     };
     setCart([...cart, cartItem]);
   };
@@ -39,23 +40,48 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
       <main className={styles.main}>
         <section className={styles.product}>
           <div className={styles.product_img}>
-            <img src={product.img_url} alt="product" />
+            <img src={product.img_url} alt="product_url" />
           </div>
         </section>
         <section className={styles.product}>
           <div className={styles.product_info}>
+            
+            {/* 브랜드,제품명 */}
             <p className={styles.seller_store}>{product.brand_name}</p>
             <p className={styles.product_name}>{product.title}</p>
-            <span className={styles.price}>
-              Origin Price : {new Intl.NumberFormat().format(product.origin_price)}
-              <span className={styles.unit}>원</span>
+            
+            {/* 가격 정보 */}
+            <span className={styles.price}> 
+              Origin Price : 
+              <span style={{ textDecoration: 'line-through', opacity: 0.4 }}> 
+                 {new Intl.NumberFormat().format(product.origin_price)}
+              </span>
+              <span className={styles.unit}>원 </span>
+              <span className={styles.discount_rate}>{product.discount_rate}</span>
+              <br />
+              
+              Coupon Price : 
+              <span style={{color:'red'}}> 
+                 {new Intl.NumberFormat().format(product.coupon_price)}
+              </span>
+              <span className={styles.unit}>원 </span>             
+            
             </span>
+
+            {/* 옵션 정보 */}
+            <span className={styles.option}>{product.prod_option}</span>
+
+            {/* 상품설명 정보 */}
+            <span className={styles.description}>
+              {product.description}
+            </span>
+
         
             <div className={styles.buttonContainer}>             
               {/* 구매 링크 버튼*/}
               <button 
               className={styles.buyButton} 
-              onClick={() => window.location.href = "http://coupang.com"}>
+              onClick={() => window.open(product.url,'_blank')}>
               구매하기
               </button>
 

@@ -45,17 +45,18 @@
 }
 
 .product_info .product_name {
-  font-size: 36px;
+  font-size: 26px;
+  font-family: serif;
   line-height: 45px;
   color: #000000;
   margin-bottom: 20px;
 }
 
 .product_info .price {
-  font-size: 36px;
+  font-size: 30px;
   line-height: 45px;
   color: #000000;
-  margin-bottom: 138px;
+  margin-bottom: 58px;
 }
 
 .product_info .unit {
@@ -126,6 +127,7 @@
 .buttonContainer {
   display: flex;
   gap: 10px;
+  margin-top: 30px;
 }
 
 /* 구매하기 버튼 CSS */
@@ -158,3 +160,24 @@
  .favorite:hover {
   background-color: gray;
  }
+
+/* 할인률 CSS */
+ .discount_rate {
+  background-color: skyblue;
+  color: black;
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 24px;
+  font-family: serif;
+}
+
+/* 옵션 CSS */
+.option {
+  border: 2px solid black;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: center;
+  background-color: ghostwhite;
+  padding: 3px 3px 3px 3px;
+}
+
