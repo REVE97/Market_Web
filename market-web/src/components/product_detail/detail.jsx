@@ -78,6 +78,7 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
             <img src={product.img_url} alt="product_url" />
           </div>
         </section>
+        
         <section className={styles.product}>
           <div className={styles.product_info}>
             

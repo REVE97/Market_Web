@@ -6,8 +6,9 @@ export const Product = ( {product, convertPrice} ) => {
     <div className={styles.product}>
       <div className={styles.product_item}>
       <Link to={`/product/${product.id}`}>
-          <div className={styles.product_image}>
+          <div className={styles.image_container}>
             <img src={product.img_url} alt="product" />
+            <div className={styles.data_value}>{product.discount_rate}</div>
           </div>
         </Link>
         <div className={styles.store}>

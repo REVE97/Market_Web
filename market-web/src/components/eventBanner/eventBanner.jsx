@@ -4,7 +4,7 @@ export const EventBanner = () => {
   return (
     
     // 배너 링크
-    <a href="https://github.com/REVE97/Market_Web">
+    <a href="https://github.com/REVE97/Market_Web" target="_blank" rel="noopener noreferrer">
     <article
       className={styles.banner}
       style={{
