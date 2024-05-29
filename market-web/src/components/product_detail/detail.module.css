@@ -190,8 +190,18 @@
 
 /* 배송일 CSS */
 .delivery {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-flex;
+}
+
+.delivery img { 
+  margin-right: 5px;
+}
+
+.deliveryText {
+  margin-top: 2px;
 }
 
 /* 제품 리뷰 별점 CSS */
@@ -221,5 +231,11 @@
   font-size: 16px; /* 글자 크기 */
   text-align: center; /* 중앙 정렬 */
   animation: fadeInOut 3s ease-in-out; /* 페이드 인/아웃 애니메이션 */
+}
+
+.rating_line {
+  padding-bottom: 10px;
+  margin-right: 10px;
+  font-weight: bold;
 }
 

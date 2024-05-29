@@ -11,14 +11,14 @@ import { BarChart } from '../barchart/barchart.jsx'
 import { parseData } from "../../ChartData.js";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalfAlt, faStar as farStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 // 제품 리뷰 별점 체크 함수
 const Rating = ({ rating }) => {
   const validRating = Math.max(0, Math.min(rating, 5));
-  const fullStars = Math.floor(validRating);
   const hasHalfStar = validRating % 1 >= 0.25 && validRating % 1 <= 0.75;
-  const emptyStars = Math.max(0, 5 - fullStars - (hasHalfStar ? 1 : 0)); 
+  const fullStars = Math.floor(validRating);
+  const emptyStars = Math.max(0, 5 - fullStars - (hasHalfStar ? 1 : 0));
 
   const fullStarsArray = Array.from({ length: fullStars });
   const emptyStarsArray = Array.from({ length: emptyStars });
@@ -30,11 +30,12 @@ const Rating = ({ rating }) => {
       ))}
       {hasHalfStar && <FontAwesomeIcon key="half" icon={faStarHalfAlt} />}
       {emptyStarsArray.map((_, index) => (
-        <FontAwesomeIcon key={`empty-${index}`} icon={farStar} />
+        <FontAwesomeIcon key={`empty-${index}`} icon={emptyStars} />
       ))}
     </div>
   );
 };
+
 
 export const Detail = ( {convertPrice, cart, setCart}) => {
   
@@ -86,7 +87,7 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
             
             {/* 제품 리뷰 별점 */}
             <div className={styles.rating}>
-              <span>RATING : {product.rating}</span>
+              <span className={styles.rating_line}>RATING : {product.rating}</span>
               <Rating rating={product.rating} />
             </div>
 
@@ -113,8 +114,9 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
             <hr />
 
             {/* 배송일 정보 */}
-            <span className={styles.delivery}><img src="/images/icon-calendar.svg" alt="calendar" />배송일: {' '}
-              {product.delivery}
+            <span className={styles.delivery}>
+              <img src="/images/icon-calendar.svg" alt="calendar" /> 
+              <span className={styles.deliveryText}>배송일 : {product.delivery} </span>
             </span>
 
             <hr />
