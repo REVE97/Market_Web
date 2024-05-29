@@ -22,9 +22,10 @@
 }
 
 .product_img img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 80%;
   border-radius: 10px;
+  margin-left: 30px;
 }
 
 .product_info {
@@ -204,3 +205,21 @@
   color: goldenrod;
   margin-right: 4px; /* 별 사이의 간격 조절 */
 }
+
+/* 알림메시지 CSS */
+.alert {
+  position: fixed; /* 화면에 고정 */
+  top: 20px; /* 화면 상단에 표시 */
+  left: 70%; /* 화면 중앙에 위치 */
+  transform: translateX(-50%); /* 가로축 중앙 정렬 */
+  background-color: skyblue; /* 배경색: 녹색 */
+  color: white; /* 글자색: 흰색 */
+  padding: 16px; /* 여백 */
+  border-radius: 4px; /* 모서리 둥글게 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 */
+  z-index: 1000; /* 다른 요소들보다 위에 표시 */
+  font-size: 16px; /* 글자 크기 */
+  text-align: center; /* 중앙 정렬 */
+  animation: fadeInOut 3s ease-in-out; /* 페이드 인/아웃 애니메이션 */
+}
+

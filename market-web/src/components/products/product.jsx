@@ -19,7 +19,7 @@ export const Product = ( {product, convertPrice} ) => {
         </div>
 
         <div className={styles.product_price}>
-          <span className={styles.price}>{convertPrice(product.origin_price)}</span>
+          <span className={styles.price}>{convertPrice(product.coupon_price)}</span>
           <span className={styles.unit}>원</span>
         </div>
       </div>

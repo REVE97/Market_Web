@@ -43,7 +43,7 @@ function App() {
           <Route path="/product/:id" element={<Product cart={cart} setCart={setCart} />} />
 
           {/* 제품 종류별 카테고리 */}
-          <Route path="/:category" element={
+          <Route path="/categoryId/:categoryId" element={
               <FilteredProducts
                products={products} 
                setProducts={setProducts} 
@@ -51,7 +51,7 @@ function App() {
           />
           
           {/* 제품 브랜드별 카테고리 */}
-          <Route path="/brand_name/:brand_name" element={
+          <Route path="/brand_id/:brand_id" element={
               <FilteredProducts 
                 products={products} 
                 setProducts={setProducts} 

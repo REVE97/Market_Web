@@ -53,7 +53,7 @@
 }
 
 .cart_product_info {
-  width: 150px;
+  width: 450px;
   margin-left: 36px;
 }
 
@@ -69,6 +69,7 @@
   line-height: 22px;
   color: #000000;
   margin-bottom: 10px;
+  
 }
 
 .cart_product_info .price {
@@ -381,7 +382,7 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  width: 50%;
+  width: 100%;
 }
 
 .page_button:hover {

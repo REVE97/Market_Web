@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import axios from 'axios';
 import { Product } from '../products/product';
-import styles from "../main/main.module.css";
 import { EventBanner } from "../eventBanner/eventBanner";
+import axios from 'axios';
+import styles from "../main/main.module.css";
 
 export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   
-  const { category, brand_name } = useParams();
+  const { categoryId, brand_id } = useParams();
   
   // 검색 엔진 기능
   const location = useLocation();
@@ -38,24 +38,16 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
     }
   };
 
-  // 필터링된 제품 목록을 생성 ( 카테고리 )
+  // 필터링된 제품 목록을 생성 ( 사이드바 카테고리 )
   const filteredProducts = products.filter(product => {
     if (query) {
       return product.title.toLowerCase().includes(query.toLowerCase());
-    } else if (brand_name) {
-      return product.brand_name.toLowerCase() === brand_name.toLowerCase();
-    } else if (category && category.toLowerCase() === "computer devices") {
-      const validNames = ["desktop", "notebook", "monitor", "mouse", "keyboard"];
-      return validNames.includes(product.title.toLowerCase());
-    } else if (category && category.toLowerCase() === "digital") {
-      const validNames = ["tablet", "phone", "smartwatch", "game"];
-      return validNames.includes(product.title.toLowerCase());
-    } else if (category && category.toLowerCase() === "brand") {
-      const validProviders = ["apple", "samsung", "lg"];
-      return validProviders.includes(product.brand_name.toLowerCase());
-    } else {
-      return category && product.title.toLowerCase() === category.toLowerCase();
+    } else if (categoryId) {
+      return product.categoryId === parseInt(categoryId, 10);
+    } else if (brand_id) {
+      return product.brand_id === parseInt(brand_id, 10);
     }
+    return false;
   });
 
   // 현재 페이지에 맞는 제품 리스트를 계산

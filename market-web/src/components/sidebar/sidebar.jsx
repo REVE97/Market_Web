@@ -24,44 +24,44 @@ export const Sidebar = () => {
                 <ul className='sidebarList'>
     
                     <li className='sidebarListItem'>
-                       <img src="/images/icon-desktop.svg" alt="desktop" /> 
-                       <Link className="sidebarLink" to={'/desktop'}>DESKTOP</Link>
+                       <img src="/images/icon-notebook.svg" alt="notebook" />
+                       <Link className="sidebarLink" to={'/categoryId/1'}>NOTEBOOK</Link>
                     </li>
                     <li className='sidebarListItem'>
-                       <img src="/images/icon-notebook.svg" alt="notebook" />
-                       <Link className="sidebarLink" to={'/notebook'}>NOTEBOOK</Link>
+                       <img src="/images/icon-desktop.svg" alt="desktop" /> 
+                       <Link className="sidebarLink" to={'/categoryId/2'}>DESKTOP</Link>
                     </li>
                     <li className='sidebarListItem'>
                     <img src="/images/icon-monitor.svg" alt="monitor" />
-                       <Link className="sidebarLink" to={'/monitor'}>MONITOR</Link>
-                    </li>
-                    <li className='sidebarListItem'>
-                       <img src="/images/icon-mouse.svg" alt="mouse" />
-                       <Link className="sidebarLink" to={'/mouse'}>MOUSE</Link>
+                       <Link className="sidebarLink" to={'/categoryId/3'}>MONITOR</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-keyboard.svg" alt="keyboard" />
-                       <Link className="sidebarLink" to={'/keyboard'}>KEYBOARD</Link>
+                       <Link className="sidebarLink" to={'/categoryId/4'}>KEYBOARD</Link>
+                    </li>
+                    <li className='sidebarListItem'>
+                       <img src="/images/icon-mouse.svg" alt="mouse" />
+                       <Link className="sidebarLink" to={'/categoryId/5'}>MOUSE</Link>
                     </li>
                 </ul>
 
                 <h3 className='sidebarTitle'><Link className="sidebarTitle" to={'/digital'}>Digital</Link></h3>
                 <ul className='sidebarList'>
                     <li className='sidebarListItem'>
-                       <img src="/images/icon-tablet.svg" alt="tablet" />
-                       <Link className="sidebarLink" to={'/tablet'}>TABLET</Link>
+                       <img src="/images/icon-phone.svg" alt="smartphone" />
+                       <Link className="sidebarLink" to={'/categoryId/6'}>SMARTPHONE</Link>
                     </li>
                     <li className='sidebarListItem'>
-                       <img src="/images/icon-phone.svg" alt="smartphone" />
-                       <Link className="sidebarLink" to={'/smartphone'}>SMARTPHONE</Link>
+                       <img src="/images/icon-tablet.svg" alt="tablet" />
+                       <Link className="sidebarLink" to={'/categoryId/7'}>TABLET</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-watch.svg" alt="watch" />
-                       <Link className="sidebarLink" to={'/smartwatch'}>SMARTWATCH</Link>
+                       <Link className="sidebarLink" to={'/categoryId/8'}>SMARTWATCH</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-game.svg" alt="game" />
-                       <Link className="sidebarLink" to={'/game'}>GAME</Link>
+                       <Link className="sidebarLink" to={'/categoryId/9'}>GAME</Link>
                     </li>
 
                 <hr></hr><br></br>
@@ -72,19 +72,19 @@ export const Sidebar = () => {
                 <ul className='sidebarList'>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-apple.svg" alt="apple" />
-                       <Link className="sidebarLink" to={'/brand_name/apple'}>APPLE</Link>
+                       <Link className="sidebarLink" to={'/brand_id/5'}>APPLE</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-samsung.svg" alt="samsung" />
-                       <Link className="sidebarLink" to={'/brand_name/samsung'}>SAMSUNG</Link>
+                       <Link className="sidebarLink" to={'/brand_id/42'}>SAMSUNG</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-lg.png" alt="lg" />
-                       <Link className="sidebarLink" to={'/brand_name/lg'}>LG</Link>
+                       <Link className="sidebarLink" to={'/brand_id/6'}>LG</Link>
                     </li>
                     <li className='sidebarListItem'>
                        <img src="/images/icon-nintendo.svg" alt="nintendo" />
-                       <Link className="sidebarLink" to={'/brand_name/nintendo'}>NINTENDO</Link>
+                       <Link className="sidebarLink" to={'/brand_id/79'}>NINTENDO</Link>
                     </li>
 
                 </ul>

@@ -5,13 +5,13 @@
 }
 
 .product_item {
-  width: calc(33.33% - 10px);
+  width: calc(88.33% - 10px);
   margin-bottom: 20px;
 }
 
 .product_image {
-  width: 380px;
-  height: 380px;
+  width: 350px;
+  height: 300px;
   border-radius: 10px;
   margin-bottom: 16px;
 }

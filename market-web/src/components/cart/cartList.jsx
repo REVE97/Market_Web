@@ -31,7 +31,7 @@ export const CartList = ( { cart, convertPrice, handleRemove } ) => {
 
         {/* 제품 페이지로 이동하는 버튼 */}
         <button className={styles.page_button} onClick={handlePageButtonClick}>
-          제품 페이지
+          제품 페이지로 이동
         </button>
 
         {/* 찜목록 삭제 */}

@@ -41,6 +41,9 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
   const {id} = useParams();
   const [product, setProduct] = useState({});
 
+  // 알림 메시지 배열
+  const [showAlert, setShowAlert] = useState(false);
+
   // 데이터 연동
   useEffect(() => {
     axios.get("/data/products.json").then((data) => {
@@ -59,10 +62,15 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
       price: product.coupon_price
     };
     setCart([...cart, cartItem]);
+    setShowAlert(true); // 알림 메시지 표시
+    setTimeout(() => setShowAlert(false), 2000); // 2초 후 알림 메시지 숨기기
   };
 
   return (
     <>
+      {/* 알림 메시지 출력 */}
+      {showAlert && <div className={styles.alert}>찜목록에 추가되었습니다!</div>}
+      
       <main className={styles.main}>
         <section className={styles.product}>
           <div className={styles.product_img}>
@@ -77,20 +85,21 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
             <p className={styles.product_name}>{product.title}</p>
             
             {/* 제품 리뷰 별점 */}
-            <p className={styles.rating}>RATING : {product.rating} 
+            <div className={styles.rating}>
+              <span>RATING : {product.rating}</span>
               <Rating rating={product.rating} />
-            </p>
+            </div>
 
             <hr />
             
             {/* 가격 정보 */}
             <span className={styles.price}> 
               Origin Price : {' '}
-              <span className={styles.discount_rate}>{product.discount_rate}</span>
               <span style={{ textDecoration: 'line-through', opacity: 0.4 }}> 
                  {new Intl.NumberFormat().format(product.origin_price)}
               </span>
               <span className={styles.unit}>원 </span>
+              <span className={styles.discount_rate}>{product.discount_rate}</span>
               <br />
               
               Coupon Price : {' '}
