@@ -21,7 +21,7 @@ export const Sidebar = () => {
                     <h2 className='menu'>MENU_</h2>
                     <hr />
                     <h3 className='sidebarTitle' onMouseEnter={() => handleMouseEnter('main')} onMouseLeave={handleMouseLeave}>
-                        <Link className="sidebarTitleLink" to={'/'}>Main</Link>
+                        <Link className="sidebarTitleLink" to={'/'}># Main</Link>
                     </h3>
                     <ul className={`sidebarList ${openMenu === 'main' ? 'show' : ''}`} onMouseEnter={() => handleMouseEnter('main')} onMouseLeave={handleMouseLeave}>
                         <li className='sidebarListItem'>
@@ -31,7 +31,7 @@ export const Sidebar = () => {
                     </ul>
 
                     <h3 className='sidebarTitle' onMouseEnter={() => handleMouseEnter('computerDevices')} onMouseLeave={handleMouseLeave}>
-                        <Link className="sidebarTitleLink" to={''}>Computer Devices</Link>
+                        <Link className="sidebarTitleLink" to={''}># Computer Devices</Link>
                     </h3>
                     <ul className={`sidebarList ${openMenu === 'computerDevices' ? 'show' : ''}`} onMouseEnter={() => handleMouseEnter('computerDevices')} onMouseLeave={handleMouseLeave}>
                         <li className='sidebarListItem'>
@@ -57,7 +57,7 @@ export const Sidebar = () => {
                     </ul>
 
                     <h3 className='sidebarTitle' onMouseEnter={() => handleMouseEnter('digital')} onMouseLeave={handleMouseLeave}>
-                        <Link className="sidebarTitleLink" to={''}>Digital</Link>
+                        <Link className="sidebarTitleLink" to={''}># Digital</Link>
                     </h3>
                     <ul className={`sidebarList ${openMenu === 'digital' ? 'show' : ''}`} onMouseEnter={() => handleMouseEnter('digital')} onMouseLeave={handleMouseLeave}>
                         <li className='sidebarListItem'>
@@ -79,7 +79,7 @@ export const Sidebar = () => {
                     </ul>
 
                     <h3 className='sidebarTitle' onMouseEnter={() => handleMouseEnter('brand')} onMouseLeave={handleMouseLeave}>
-                        <Link className="sidebarTitleLink" to={'/'}>Brand</Link>
+                        <Link className="sidebarTitleLink" to={'/'}># Brand</Link>
                     </h3>
                     <ul className={`sidebarList ${openMenu === 'brand' ? 'show' : ''}`} onMouseEnter={() => handleMouseEnter('brand')} onMouseLeave={handleMouseLeave}>
                         
