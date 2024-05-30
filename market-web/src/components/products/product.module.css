@@ -26,6 +26,7 @@
   border: 1px solid #c4c4c4;
 }
 
+/* 이미지에 할인률 추가 CSS */
 .data_value {
   position: absolute;
   top: 7%;
@@ -34,7 +35,7 @@
   color: white;
   background-color: red;
   padding: 10px 10px;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .store {

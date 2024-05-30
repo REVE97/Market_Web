@@ -78,7 +78,7 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
             <img src={product.img_url} alt="product_url" />
           </div>
         </section>
-        
+
         <section className={styles.product}>
           <div className={styles.product_info}>
             
@@ -88,7 +88,7 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
             
             {/* 제품 리뷰 별점 */}
             <div className={styles.rating}>
-              <span className={styles.rating_line}>RATING : {product.rating}</span>
+              <span className={styles.rating_line}>Average Rating : {product.rating}</span>
               <Rating rating={product.rating} />
             </div>
 
