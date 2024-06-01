@@ -47,8 +47,8 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
 
   // 데이터 연동
   useEffect(() => {
-    axios.get("/data/products.json").then((data) => {
-      setProduct(data.data.products.find((product) => product.id === parseInt(id)))
+    axios.get("http://3.34.188.16:8080/api/products/").then((response) => {
+      setProduct(response.data.find((product) => product.id === parseInt(id)))
     });
   }, [id]);
 

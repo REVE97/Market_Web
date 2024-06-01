@@ -7,7 +7,7 @@ import styles from "../main/main.module.css";
 
 export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   
-  const { categoryId, brand_id } = useParams();
+  const { category_id, brand_id } = useParams();
   
   // 검색 엔진 기능
   const location = useLocation();
@@ -18,8 +18,8 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   const itemsPerPage = 6; // 페이지에 나타낼 product 제품수 설정
 
   useEffect(() => {
-    axios.get("/data/products.json").then((data) => {
-      setProducts(data.data.products);
+    axios.get("http://3.34.188.16:8080/api/products/").then((response) => {
+      setProducts(response.data);
     });
   }, [setProducts]);
 
@@ -42,8 +42,8 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   const filteredProducts = products.filter(product => {
     if (query) {
       return product.title.toLowerCase().includes(query.toLowerCase());
-    } else if (categoryId) {
-      return product.categoryId === parseInt(categoryId, 10);
+    } else if (category_id) {
+      return product.category_id === parseInt(category_id, 10);
     } else if (brand_id) {
       return product.brand_id === parseInt(brand_id, 10);
     }

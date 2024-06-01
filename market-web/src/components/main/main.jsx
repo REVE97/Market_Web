@@ -7,12 +7,12 @@ import axios from "axios";
 export const Main = ({ products, setProducts, convertPrice }) => {
   
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;    // 페이지에 나타낼 product 제품수 설정
+  const itemsPerPage = 9;    // 페이지에 나타낼 product 제품수 설정
   
   // 데이터 입력
   useEffect(() => {                                             
-    axios.get("/data/products.json").then((data) => {
-      setProducts(data.data.products);
+    axios.get("http://3.34.188.16:8080/api/products/").then((response) => {
+      setProducts(response.data);
     });
   }, [setProducts]);
   

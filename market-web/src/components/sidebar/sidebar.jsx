@@ -79,7 +79,7 @@ export const Sidebar = () => {
                     </ul>
 
                     <h3 className='sidebarTitle' onMouseEnter={() => handleMouseEnter('brand')} onMouseLeave={handleMouseLeave}>
-                        <Link className="sidebarTitleLink" to={'/'}># Brand</Link>
+                        <Link className="sidebarTitleLink" to={''}># Brand</Link>
                     </h3>
                     <ul className={`sidebarList ${openMenu === 'brand' ? 'show' : ''}`} onMouseEnter={() => handleMouseEnter('brand')} onMouseLeave={handleMouseLeave}>
                         
