@@ -10,6 +10,8 @@ import { userData } from '../../ChartData.js';
 import { BarChart } from '../barchart/barchart.jsx'
 import { parseData } from "../../ChartData.js";
 
+import { PieCharts } from '../piechart/piechart.jsx';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -154,22 +156,29 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
       <hr></hr>
       
       {/* LineCharts 그래프 */}
-      <Chart
-        data={userData}
-        title="Price LineCharts"
-        grid
-        dataKey="Price"
-      ></Chart>
-
-      <hr></hr>
+      <div>
+        <Chart
+          data={userData}
+          title="Price LineCharts"
+          grid
+          dataKey="Price"
+          ></Chart>
+      </div>
 
       {/* BarCharts 그래프 */}
-      <BarChart
-        data={parseData}
-        title="Price BarCharts"
-        grid
-        datekey="date,openClose,highLow"
-      ></BarChart>
+      <div>
+        <BarChart
+          data={parseData}
+          title="Price BarCharts"
+          grid
+          datekey="date,openClose,highLow"
+        ></BarChart>
+      </div>
+      
+      {/* PieCharts 그래프 */}
+      <div>
+        <PieCharts></PieCharts>
+      </div>
       
     </>
   );
