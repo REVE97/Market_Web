@@ -220,7 +220,7 @@
 .alert {
   position: fixed; /* 화면에 고정 */
   top: 20px; /* 화면 상단에 표시 */
-  left: 70%; /* 화면 중앙에 위치 */
+  left: 60%; /* 화면 중앙에 위치 */
   transform: translateX(-50%); /* 가로축 중앙 정렬 */
   background-color: skyblue; /* 배경색: 녹색 */
   color: white; /* 글자색: 흰색 */

@@ -58,20 +58,20 @@ export const TopNavigationBar = ( {cart} ) => {
           </div>
         </Link>
         
-        {/* <Link to="/">
+        <Link to="/">
           <div className={styles.mypage}>
             <img src="/images/icon-user.svg" alt="user" />
             <span>마이페이지</span>
           </div>
-        </Link> */}
+        </Link>
 
 
-        {/* <Link to="/">
+        <Link to="/">
           <div className={styles.mypage}>
             <img src="/images/icon-power.svg" alt="login" />
             <span>로그인</span>
           </div>
-        </Link> */}
+        </Link>
         
       </div>
     </header>
