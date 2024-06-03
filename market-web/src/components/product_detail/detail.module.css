@@ -9,10 +9,11 @@
 
 .product {
   width: 700px;
-  height: 700px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   margin-right: 50px;
+  margin-left: 10px; 
 }
 
 .product_img {
@@ -50,6 +51,9 @@
   line-height: 45px;
   color: #000000;
   margin-bottom: 20px;
+  max-width: 40ch;
+  overflow-wrap: break-word; 
+  white-space: normal; 
 }
 
 .product_info .price {
@@ -185,59 +189,9 @@
   animation: fadeInOut 3s ease-in-out; /* 페이드 인/아웃 애니메이션 */
 }
 
+/* 제품 리뷰 글씨체 CSS */
 .rating_line {
   padding-bottom: 10px;
   margin-right: 10px;
   font-weight: bold;
-}
-
-
-
-
-
-@media (max-width: 1440px) {
-  .main {
-    flex-direction: column;
-  }
-
-  .product {
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    padding-bottom: 0;
-  }
-
-  .btn {
-    justify-content: center;
-  }
-  .btn .btn_buy {
-    width: 70%;
-  }
-
-  .btn .btn_cart {
-    width: 30%;
-  }
-
-  .line {
-    width: 80%;
-  }
-
-  .product_info .price {
-    margin-bottom: 50px;
-  }
-}
-
-@media (max-width: 380px) {
-  .product_info .seller_store,
-  .btn .btn_cart,
-  .btn .btn_buy {
-    font-size: 14px;
-  }
-
-  .product_info .product_name,
-  .product_info .price
-  {
-    font-size: 20px;
-  }
-
 }

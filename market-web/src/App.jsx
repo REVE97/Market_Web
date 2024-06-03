@@ -8,6 +8,8 @@ import { Sidebar } from "./components/sidebar/sidebar.jsx";
 import { useState } from "react";
 import { FilteredProducts } from "./components/filteredProducts/filteredProducts.jsx";
 
+import Sign from "./pages/sign.jsx";
+
 function App() {
   
   const [products, setProducts] = useState([]);
@@ -71,6 +73,9 @@ function App() {
           <Route path="/favorite" element={
           <Basket cart={cart} setCart={setCart} convertPrice={convertPrice} />} 
           />
+
+          {/* 로그인 페이지 */}
+          <Route path="/sign" element={<Sign></Sign>}></Route>
 
         </Routes>
 

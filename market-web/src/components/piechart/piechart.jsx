@@ -47,7 +47,7 @@ const needle = (value, data, cx, cy, iR, oR, color) => {
 
 export const PieCharts = () => {
   return (
-    <div className='chart'>
+    <div className='chart'>PieCharts
     <PieChart width={400} height={300}>
       <Pie
         dataKey="value"
