@@ -14,7 +14,7 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   const query = searchParams.get("query");
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9; // 페이지에 나타낼 product 제품수 설정
+  const itemsPerPage = 6; // 페이지에 나타낼 product 제품수 설정
 
   const [pageChunk, setPageChunk] = useState(0);
   const pagesPerChunk = 20; // 페이지 청크당 페이지 수
