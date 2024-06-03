@@ -6,7 +6,7 @@ import styles from '../components/login/sign.css';
 
 // 생일 데이터 : 년,월,일
 const BIRTHDAY_YEAR_LIST = Array.from(
-  { length: 15 },
+  { length: 20 },
   (_, i) => `${i + 1990}년`,
 );
 const BIRTHDAY_MONTH_LIST = Array.from({ length: 12 }, (_, i) => `${i + 1}월`);
@@ -14,7 +14,6 @@ const BIRTHDAY_DAY_LIST = Array.from({ length: 31 }, (_, i) => `${i + 1}일`);
 
 // 휴대폰 데이터 : (010)
 const PHONENUMBER_LIST = ['010', '011', '016', '018', '019'];
-
 
 export const Signup = () => {
 
@@ -114,7 +113,6 @@ export const Signup = () => {
           <div className="etcUserFrame">
             <div className="infoTextFrame">
               <p className="userinfoText">닉네임</p>
-              <p className="infoOptionalText">선택 사항</p>
             </div>
             <input
               className="nicknameInput"
@@ -144,7 +142,6 @@ export const Signup = () => {
             <div className="birthdayFrame">
               <div className="infoTextFrame">
                 <p className="userinfoText">생일</p>
-                <p className="infoOptionalText">선택 사항</p>
               </div>
               <div className="birthdaySelectFrame">
                 <select className="birthdayBox yearBox">
