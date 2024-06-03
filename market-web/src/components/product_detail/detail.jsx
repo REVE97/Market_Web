@@ -155,30 +155,26 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
       
       <hr></hr>
       
+      
+      {/* PieCharts 그래프 */}
+        <PieCharts></PieCharts>
+        
       {/* LineCharts 그래프 */}
-      <div>
+        
         <Chart
           data={userData}
           title="Price LineCharts"
           grid
           dataKey="Price"
-          ></Chart>
-      </div>
-      
+        ></Chart>
+        
       {/* BarCharts 그래프 */}
-      <div>
         <BarChart
           data={parseData}
           title="Price BarCharts"
           grid
           datekey="date,openClose,highLow"
         ></BarChart>
-      </div>
-      
-      {/* PieCharts 그래프 */}
-      <div>
-        <PieCharts></PieCharts>
-      </div>
       
     </>
   );

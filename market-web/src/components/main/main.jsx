@@ -8,6 +8,7 @@ export const Main = ({ products, setProducts, convertPrice }) => {
   
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;    // 페이지에 나타낼 product 제품수 설정
+  
   const [pageChunk, setPageChunk] = useState(0);
   const pagesPerChunk = 20;  // 페이지 청크당 페이지 수
 
@@ -85,12 +86,15 @@ export const Main = ({ products, setProducts, convertPrice }) => {
 
       {/* 페이지 버튼 구현 */}
       <div className={styles.pagination}>
+        
         {pageChunk > 0 && <button onClick={prevChunk}>이전</button>}
+        
         {Array.from({ length: endPage - startPage + 1 }, (_, index) => (
           <button key={startPage + index} onClick={() => changePage(startPage + index)}>
             {startPage + index}
           </button>
         ))}
+        
         {pageChunk < totalChunks - 1 && <button onClick={nextChunk}>다음</button>}
       </div>
     </>

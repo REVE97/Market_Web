@@ -8,9 +8,9 @@ export const Product = ( {product, convertPrice} ) => {
       <Link to={`/product/${product.id}`}>
           <div className={styles.image_container}>
             <img src={product.img_url} alt="product" />
-            <div className={styles.data_value}>{product.discount_rate}</div>
+            <div className={styles.data_value}>{product.price_change_rate}%</div>
           </div>
-        </Link>
+      </Link>
         <div className={styles.store}>
           <span>{product.brand_name}</span>
         </div>

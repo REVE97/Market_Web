@@ -108,6 +108,7 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
             {startPage + index}
           </button>
         ))}
+        
         {pageChunk < totalChunks - 1 && <button onClick={nextChunk}>다음</button>}
       </div>
     </>
