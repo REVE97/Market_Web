@@ -164,7 +164,7 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
           dataKey="Price"
           ></Chart>
       </div>
-
+      
       {/* BarCharts 그래프 */}
       <div>
         <BarChart

@@ -9,13 +9,15 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   
   const { category_id, brand_id } = useParams();
   
-  // 검색 엔진 기능
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const query = searchParams.get("query");
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // 페이지에 나타낼 product 제품수 설정
+  const itemsPerPage = 9; // 페이지에 나타낼 product 제품수 설정
+
+  const [pageChunk, setPageChunk] = useState(0);
+  const pagesPerChunk = 20; // 페이지 청크당 페이지 수
 
   useEffect(() => {
     axios.get("http://3.34.188.16:8080/api/products/").then((response) => {
@@ -23,7 +25,10 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
     });
   }, [setProducts]);
 
-  // 정렬 함수
+  useEffect(() => {
+    setCurrentPage(pageChunk * pagesPerChunk + 1);
+  }, [pageChunk]);
+
   const sortProduct = (type) => {
     const newProduct = [...products];
     if (type === "basic") {
@@ -38,7 +43,6 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
     }
   };
 
-  // 필터링된 제품 목록을 생성 ( 사이드바 카테고리 )
   const filteredProducts = products.filter(product => {
     if (query) {
       return product.title.toLowerCase().includes(query.toLowerCase());
@@ -50,18 +54,27 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
     return false;
   });
 
-  // 현재 페이지에 맞는 제품 리스트를 계산
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredProducts.slice(indexOfFirstItem, indexOfLastItem);
 
-  // 총 페이지 수 계산
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const totalChunks = Math.ceil(totalPages / pagesPerChunk);
 
-  // 페이지 변경 함수
   const changePage = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  const nextChunk = () => {
+    setPageChunk(prev => Math.min(prev + 1, totalChunks - 1));
+  };
+
+  const prevChunk = () => {
+    setPageChunk(prev => Math.max(prev - 1, 0));
+  };
+
+  const startPage = pageChunk * pagesPerChunk + 1;
+  const endPage = Math.min(startPage + pagesPerChunk - 1, totalPages);
 
   return (
     <>
@@ -84,16 +97,19 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
         )}
       </main>
 
-      {/* 페이지 버튼 구현 */}
       <div className={styles.pagination}>
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button key={index + 1} onClick={() => changePage(index + 1)}>
-            {index + 1}
+        {pageChunk > 0 && <button onClick={prevChunk}>이전</button>}
+        
+        {Array.from({ length: endPage - startPage + 1 }, (_, index) => (
+          <button
+            key={startPage + index}
+            onClick={() => changePage(startPage + index)}
+          >
+            {startPage + index}
           </button>
         ))}
+        {pageChunk < totalChunks - 1 && <button onClick={nextChunk}>다음</button>}
       </div>
     </>
   );
 };
-
-
