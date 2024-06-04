@@ -9,6 +9,7 @@ import { useState } from "react";
 import { FilteredProducts } from "./components/filteredProducts/filteredProducts.jsx";
 
 import Sign from "./pages/sign.jsx";
+import Login from "./pages/login.jsx";
 
 function App() {
   
@@ -75,8 +76,10 @@ function App() {
           />
 
           {/* 로그인 페이지 */}
+          <Route path="/login" element={<Login></Login>}></Route>
+          
+          {/* 회원가입 페이지 */}
           <Route path="/sign" element={<Sign></Sign>}></Route>
-
         </Routes>
 
         </div>

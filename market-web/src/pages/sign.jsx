@@ -1,177 +1,94 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import UserInput from '../components/login/UserInput.jsx';
-import UserButton from '../components/login/UserButton.jsx';
-import styles from '../components/login/sign.css';
+import axios from 'axios';
+import styled from 'styled-components';
 
-// 생일 데이터 : 년,월,일
-const BIRTHDAY_YEAR_LIST = Array.from(
-  { length: 20 },
-  (_, i) => `${i + 1990}년`,
-);
-const BIRTHDAY_MONTH_LIST = Array.from({ length: 12 }, (_, i) => `${i + 1}월`);
-const BIRTHDAY_DAY_LIST = Array.from({ length: 31 }, (_, i) => `${i + 1}일`);
+// 회원가입 CSS <--
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+`;
 
-// 휴대폰 데이터 : (010)
-const PHONENUMBER_LIST = ['010', '011', '016', '018', '019'];
+const Title = styled.h2`
+  margin-bottom: 1.5rem;
+  color: #333;
+`;
 
-export const Signup = () => {
+const FormGroup = styled.div`
+  width: 100%;
+  margin-bottom: 1rem;
+`;
 
-    // 유저 정보(필수 사항)
-    const [userInfo, setUserInfo] = useState({
-      email: '',
-      password: '',
-      passwordConfirm: '',
-      nickname: '',
-    });
-  
-    // 이메일, 비밀번호, 비밀번호 확인
-    const handleInputChange = event => {
-      const { name, value } = event.target;
-      setUserInfo(userInfo => ({
-        ...userInfo,
-        [name]: value,
-      }));
-    };
-    
-    // isVaild 변수 업데이트
-    const isVaild =
-      userInfo.email &&
-      userInfo.password.length >= 10 &&
-      userInfo.password === userInfo.passwordConfirm;
-      
-    // 로그인 페이지 이동
-    const moveNavigate = useNavigate();
-    const goToLogin = () => {
-      moveNavigate('/login');
-    };
-    
-    // 회원가입 로직
-    const processSignUp = () => {
-      fetch('/data/Sign.json', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-        },
-        body: JSON.stringify({
-          email: userInfo.email,
-          password: userInfo.password,
-          nickname: userInfo.nickname,
-        }),
-      })
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error('서버 응답이 올바르지 않습니다.');
-        })
-        .then(data => {
-          if (data.message === 'SIGNUP SUCCESS') {
-            moveNavigate('/signup-complete');
-          } else {
-            alert('회원가입에 실패했습니다. 다시 시도해주세요.');
-          }
-        })
-        .catch(error => {
-          alert('회원가입 중 오류가 발생했습니다. 다시 시도해주세요.');
-        });
-    };
-  
-    return (
-      <div className={styles.singup}>
-        <div className="registrationFrame" onChange={handleInputChange}>
-          <div className="backButtonFrame">
-            <button className="backButton" onClick={goToLogin}>
-              뒤로
-            </button>
-          </div>
-          <h1 className="titleText">회원가입</h1>
-          <div className="infoTextFrame">
-            <p className="userinfoText">기본 정보</p>
-            <p className="infoOptionalText">필수 사항</p>
-          </div>
-          <div className="userInputFrame">
-            <UserInput
-              type="text"
-              placeholder="이메일"
-              value={userInfo.email}
-              name="email"
-            />
-            <UserInput
-              type="password"
-              placeholder="비밀번호"
-              value={userInfo.password}
-              name="password"
-            />
-            <UserInput
-              type="password"
-              placeholder="비밀번호 확인"
-              value={userInfo.passwordConfirm}
-              name="passwordConfirm"
-            />
-          </div>
-          <div className="etcUserFrame">
-            <div className="infoTextFrame">
-              <p className="userinfoText">닉네임</p>
-            </div>
-            <input
-              className="nicknameInput"
-              type="text"
-              placeholder="닉네임"
-              value={userInfo.nickname}
-              name="nickname"
-            />
-            <div className="numberFrame">
-              <div className="infoTextFrame">
-                <p className="userinfoText">전화번호</p>
-                <p className="infoOptionalText">선택 사항</p>
-              </div>
-              <div className="numberSelectFrame">
-                <select className="numberBox">
-                  {PHONENUMBER_LIST.map((number, index) => (
-                    <option key={index}>{number}</option>
-                  ))}
-                </select>
-                <input
-                  className="numberInput"
-                  type="text"
-                  placeholder="휴대폰 번호를 입력해주세요"
-                />
-              </div>
-            </div>
-            <div className="birthdayFrame">
-              <div className="infoTextFrame">
-                <p className="userinfoText">생일</p>
-              </div>
-              <div className="birthdaySelectFrame">
-                <select className="birthdayBox yearBox">
-                  {BIRTHDAY_YEAR_LIST.map((year, index) => (
-                    <option key={index}>{year}</option>
-                  ))}
-                </select>
-                <select className="birthdayBox monthBox">
-                  {BIRTHDAY_MONTH_LIST.map((month, index) => (
-                    <option key={index}>{month}</option>
-                  ))}
-                </select>
-                <select className="birthdayBox dayBox">
-                  {BIRTHDAY_DAY_LIST.map((day, index) => (
-                    <option key={index}>{day}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-            <div className="signupButtonFrame">
-              <UserButton
-                disabled={!isVaild}
-                onClick={processSignUp}
-                text="회원 가입"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+const Label = styled.label`
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+`;
+
+const Button = styled.button`
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+`;
+// -->
+
+const Signup = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+ 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:1337/auth/local/register', {
+        name,
+        email
+      });
+      console.log('User registered:', response.data);
+    } catch (error) {
+      console.error('An error occurred:', error.response);
+    }
   };
-  
-  export default Signup;
+
+  return (
+    <Form onSubmit={handleSubmit}>
+      <Title>회원가입</Title>
+      <FormGroup>
+        <Label>Username:</Label>
+        <Input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+      </FormGroup>
+      <FormGroup>
+        <Label>Email:</Label>
+        <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      </FormGroup>
+      <Button type="submit">Sign Up</Button>
+    </Form>
+  );
+};
+
+export default Signup;

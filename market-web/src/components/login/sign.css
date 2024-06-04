@@ -1,187 +1,47 @@
-.signup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
 }
 
-.registrationFrame {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  width: 90%;
-  max-width: 400px;
-}
-
-.backButtonFrame {
-  display: flex;
-  align-items: center;
+.login-title {
+  text-align: center;
   margin-bottom: 20px;
-}
-
-.backIcon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.backButton {
-  background: none;
-  border: none;
-  color: gray;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.titleText {
   font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: center;
 }
 
-.infoTextFrame {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+.form-group {
+  margin-bottom: 15px;
 }
 
-.userinfoText {
-  font-size: 14px;
-  font-weight: bold;
-  color: #555;
-}
-
-.infoOptionalText {
-  font-size: 12px;
-  color: #aaa;
-}
-
-.userInputFrame {
+.form-group label {
+  display: block;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.userInputFrame input {
-  width: calc(100% - 20px);
-  height: 40px;
-  margin-bottom: 15px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-.etcUserFrame {
-  margin-bottom: 20px;
-}
-
-.nicknameInput {
-  width: calc(100% - 20px);
-  height: 40px;
-  margin-bottom: 15px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.fileInputFrame {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.fileButton {
-  display: inline-block;
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-right: 10px;
-}
-
-.fileButton input {
-  display: none;
-}
-
-.fileDisplay {
-  flex-grow: 1;
-  height: 40px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-  color: #555;
-}
-
-.numberFrame {
-  margin-bottom: 15px;
-}
-
-.numberSelectFrame {
-  display: flex;
-  align-items: center;
-}
-
-.numberBox {
-  height: 40px;
-  margin-right: 10px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.numberInput {
-  flex-grow: 1;
-  height: 40px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.birthdayFrame {
-  margin-bottom: 15px;
-}
-
-.birthdaySelectFrame {
-  display: flex;
-  align-items: center;
-}
-
-.birthdayBox {
-  height: 40px;
-  margin-right: 10px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.signupButtonFrame {
-  text-align: center;
-}
-
-.signupButtonFrame button {
-  width: calc(100% - 20px);
-  height: 40px;
-  background-color: #28a745;
-  color: #fff;
+button {
+  width: 100%;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
   font-size: 16px;
+  cursor: pointer;
 }
 
-.signupButtonFrame button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+button:hover {
+  background-color: #0056b3;
 }
