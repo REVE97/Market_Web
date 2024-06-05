@@ -21,6 +21,11 @@
       "type": "email",
       "required": true,
       "unique": true
+    },
+    "password": {
+      "type": "password",
+      "required": true,
+      "minLength": 4
     }
   }
 }

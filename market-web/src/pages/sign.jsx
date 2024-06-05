@@ -61,17 +61,19 @@ const Button = styled.button`
 const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
  
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:1337/auth/local/register', {
-        name,
-        email
+      const response = axios.post('http://localhost:1337/api/markets', {
+        name: name,
+        email: email,
+        password: password
       });
-      console.log('User registered:', response.data);
+      alert('User registered:', response.data);
     } catch (error) {
-      console.error('An error occurred:', error.response);
+      alert.error('An error occurred:', error.response);
     }
   };
 
@@ -79,12 +81,16 @@ const Signup = () => {
     <Form onSubmit={handleSubmit}>
       <Title>회원가입</Title>
       <FormGroup>
-        <Label>Username:</Label>
+        <Label>Name:</Label>
         <Input type="text" value={name} onChange={(e) => setName(e.target.value)} />
       </FormGroup>
       <FormGroup>
         <Label>Email:</Label>
         <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      </FormGroup>
+      <FormGroup>
+        <Label>Password:</Label>
+        <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </FormGroup>
       <Button type="submit">Sign Up</Button>
     </Form>
