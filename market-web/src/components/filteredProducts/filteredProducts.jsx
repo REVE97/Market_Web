@@ -14,7 +14,7 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   const query = searchParams.get("query");
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6; // 페이지에 나타낼 product 제품수 설정
+  const itemsPerPage = 9; // 페이지에 나타낼 product 제품수 설정
 
   const [pageChunk, setPageChunk] = useState(0);
   const pagesPerChunk = 20; // 페이지 청크당 페이지 수
@@ -39,6 +39,12 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
       setProducts(newProduct);
     } else if (type === "high") {
       newProduct.sort((a, b) => b.origin_price - a.origin_price);
+      setProducts(newProduct);
+    } else if ( type === "price_change_rate_high" ) {   // 변동가격 높은순
+      newProduct.sort(( a, b ) => b.price_change_rate - a.price_change_rate);
+      setProducts(newProduct);
+    } else if ( type === "price_change_rate_low" ) {    // 변동가격 낮은순
+      newProduct.sort(( a, b ) => a.price_change_rate - b.price_change_rate);
       setProducts(newProduct);
     }
   };
@@ -83,8 +89,10 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
 
       <div className={styles.filter}>
         <p onClick={() => sortProduct("basic")}>기본순</p>
-        <p onClick={() => sortProduct("high")}>높은 가격순</p>
-        <p onClick={() => sortProduct("row")}>낮은 가격순</p>
+        <p onClick={() => sortProduct("high")}>높은 가격 제품순</p>
+        <p onClick={() => sortProduct("row")}>낮은 제품 가격순</p>
+        <p onClick={()=> sortProduct("price_change_rate_high")}>가격 변화율 높은 순</p>
+        <p onClick={()=> sortProduct("price_change_rate_low")}>가격 변화율 낮은 순</p>
       </div>
 
       <main className={styles.flex_wrap}>

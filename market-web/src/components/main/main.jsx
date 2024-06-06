@@ -27,14 +27,20 @@ export const Main = ({ products, setProducts, convertPrice }) => {
   // 정렬 함수
   const sortProduct = (type) => {                               
     const newProduct = [...products];
-    if ( type === "basic" ) {
+    if ( type === "basic" ) { // 기본순
       newProduct.sort(( a, b ) => a.id - b.id);
       setProducts(newProduct);
-    } else if ( type === "row" ) {
+    } else if ( type === "row" ) {  // origin_price 높은순
       newProduct.sort(( a, b ) => a.origin_price - b.origin_price);
       setProducts(newProduct);
-    } else if ( type === "high" ) {
+    } else if ( type === "high" ) { // origin_price 낮은순
       newProduct.sort(( a, b ) => b.origin_price - a.origin_price);
+      setProducts(newProduct);
+    } else if ( type === "price_change_rate_high" ) {   // 변동가격 높은순
+      newProduct.sort(( a, b ) => b.price_change_rate - a.price_change_rate);
+      setProducts(newProduct);
+    } else if ( type === "price_change_rate_low" ) {    // 변동가격 낮은순
+      newProduct.sort(( a, b ) => a.price_change_rate - b.price_change_rate);
       setProducts(newProduct);
     }
   }
@@ -74,8 +80,10 @@ export const Main = ({ products, setProducts, convertPrice }) => {
       
       <div className={styles.filter}>
         <p onClick={()=> sortProduct("basic")}>기본순</p>
-        <p onClick={()=> sortProduct("high")}>높은 가격순</p>
-        <p onClick={()=> sortProduct("row")}>낮은 가격순</p>
+        <p onClick={()=> sortProduct("high")}>높은 가격 제품순</p>
+        <p onClick={()=> sortProduct("row")}>낮은 가격 제품순</p>
+        <p onClick={()=> sortProduct("price_change_rate_high")}>가격 변화율 높은 순</p>
+        <p onClick={()=> sortProduct("price_change_rate_low")}>가격 변화율 낮은 순</p>
       </div>
       
       <main className={styles.flex_wrap}>
@@ -100,3 +108,4 @@ export const Main = ({ products, setProducts, convertPrice }) => {
     </>
   );
 };
+
