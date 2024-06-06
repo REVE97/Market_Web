@@ -170,8 +170,8 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
         />
       </div>
     
-      <div>
       {/* BarCharts 그래프 */}
+      <div>
         <BarChart
           data={parseData}
           title="Price BarCharts"
