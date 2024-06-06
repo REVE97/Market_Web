@@ -5,8 +5,6 @@
 ####   => 차트 노드 모듈
 2. npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome --legacy-peer-deps
 ####   => 제품 리뷰 별점 노드 모듈
-3. npm install styled-components --legacy-peer-deps
-#### => 회원가입 css 노드 모듈
 
 ### 2024.5.18 => Mentoring Feedback : 
 1. 시각화 요소 추가 ( BarChart 구현 ) (완료)
@@ -26,6 +24,9 @@
 2. 상세페이지에 차트 추가 및 레이어 배치 수정
 3. 회원가입 추가
 
+### 2024.6.5 => Mentoring Feedback :
+1. 상세페이지 차트 데이터베이스 연동
+
 ### 2024.5.20 ~ 2024.5.23
 1. DB name 데이터를 이용해서 검색엔진 구현 (완료)
 2. 시각화 요소 추가 ( BarChart 구현 ) (완료)
@@ -40,6 +41,7 @@
 7. axios 로 api 호출 (완료)
 
 ### 2024.6.1 ~ Todo
-1. 상세페이지에 차트 추가 및 레이어 배치 수정
-2. 인기 검색어 순위 버튼 만들기
-3. 회원가입 추가
+1. 변동가격 정렬순 추가 (완료)
+2. 상세페이지에 차트 추가 및 레이어 배치 수정
+3. 인기 검색어 순위 버튼 만들기
+4. 회원가입 추가
