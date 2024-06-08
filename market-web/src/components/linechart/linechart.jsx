@@ -9,6 +9,7 @@ export const Chart = ({ title, data, dataKey, grid }) => {
         
         const total = data.reduce((sum, item) => sum + item[dataKey],0);
         return total / data.length;
+        
     };
     const average = calculateAverage(data, dataKey);
 

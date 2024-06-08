@@ -34,11 +34,11 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
     if (type === "basic") {
       newProduct.sort((a, b) => a.id - b.id);
       setProducts(newProduct);
-    } else if (type === "row") {
-      newProduct.sort((a, b) => a.origin_price - b.origin_price);
+    } else if (type === "row") { // 현재 가격 낮은순
+      newProduct.sort((a, b) => a.coupon_price - b.coupon_price);
       setProducts(newProduct);
-    } else if (type === "high") {
-      newProduct.sort((a, b) => b.origin_price - a.origin_price);
+    } else if (type === "high") { // 현재 가격 높은순
+      newProduct.sort((a, b) => b.coupon_price - a.coupon_price);
       setProducts(newProduct);
     } else if ( type === "price_change_rate_high" ) {   // 변동가격 높은순
       newProduct.sort(( a, b ) => b.price_change_rate - a.price_change_rate);
@@ -89,8 +89,8 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
 
       <div className={styles.filter}>
         <p onClick={() => sortProduct("basic")}>기본순</p>
-        <p onClick={() => sortProduct("high")}>높은 가격 제품순</p>
-        <p onClick={() => sortProduct("row")}>낮은 제품 가격순</p>
+        <p onClick={() => sortProduct("high")}>현재 가격 높은순</p>
+        <p onClick={() => sortProduct("row")}>현재 가격 낮은순</p>
         <p onClick={()=> sortProduct("price_change_rate_high")}>가격 변화율 높은 순</p>
         <p onClick={()=> sortProduct("price_change_rate_low")}>가격 변화율 낮은 순</p>
       </div>
