@@ -7,7 +7,6 @@ import Basket  from "./pages/basket.jsx";
 import { Sidebar } from "./components/sidebar/sidebar.jsx";
 import { useState } from "react";
 import { FilteredProducts } from "./components/filteredProducts/filteredProducts.jsx";
-import Nav from '../src/components/nav/nav.jsx';
 
 function App() {
   
@@ -22,11 +21,7 @@ function App() {
     <BrowserRouter>
     
         <TopNavigationBar cart={cart} />
-
-        <hr />
-
-        <Nav></Nav>
-        
+  
         <hr /><br></br>
       
       <div className="container">
