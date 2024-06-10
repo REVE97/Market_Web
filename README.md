@@ -6,6 +6,8 @@
 2. npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome --legacy-peer-deps
 ####   => 제품 리뷰 별점 노드 모듈
 
+<hr />
+
 ### 2024.5.18 => Mentoring Feedback : 
 1. 시각화 요소 추가 ( BarChart 구현 ) (완료)
 2. 브랜드 카테고리 추가 (완료)
@@ -26,6 +28,8 @@
 
 ### 2024.6.5 => Mentoring Feedback :
 1. 상세페이지 차트 데이터베이스 연동
+
+<hr />
 
 ### 2024.5.20 ~ 2024.5.23
 1. DB name 데이터를 이용해서 검색엔진 구현 (완료)
