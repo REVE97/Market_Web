@@ -7,10 +7,9 @@ import axios from "axios";
 import { Chart } from '../linechart/linechart.jsx'
 import { userData } from '../../ChartData.js';
 
-import { BarChart } from '../barchart/barchart.jsx'
-import { parseData } from "../../ChartData.js";
-
-import { PieCharts } from '../piechart/piechart.jsx';
+// import { BarChart } from '../barchart/barchart.jsx'
+// import { parseData } from "../../ChartData.js";
+// import { PieCharts } from '../piechart/piechart.jsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
@@ -155,30 +154,32 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
       
       <hr />
       
-      {/* PieCharts 그래프 */}
-      <div>
-        <PieCharts />
-      </div>
         
       {/* LineCharts 그래프 */}
-      <div>
+      <div className={styles.LineCharts}>
         <Chart
           data={userData}
           title="Price LineCharts"
           grid
           dataKey="Price"
-        />
+          />
       </div>
     
+      {/* PieCharts 그래프 */}
+      {/* <div>
+        <PieCharts />
+      </div> */}
+
+
       {/* BarCharts 그래프 */}
-      <div>
+      {/* <div>
         <BarChart
           data={parseData}
           title="Price BarCharts"
           grid
           datekey="date,openClose,highLow"
         ></BarChart>
-      </div> 
+      </div>  */}
       
     </>
   );
