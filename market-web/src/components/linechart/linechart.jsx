@@ -5,11 +5,9 @@ import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer,Ref
 export const Chart = ({ title, data, dataKey, grid }) => {
 
     // 평균값 그래프 추가
-    const calculateAverage = (data, dataKey) => {
-        
+    const calculateAverage = (data, dataKey) => {       
         const total = data.reduce((sum, item) => sum + item[dataKey],0);
-        return total / data.length;
-        
+        return total / data.length;      
     };
     const average = calculateAverage(data, dataKey);
 
@@ -17,8 +15,7 @@ export const Chart = ({ title, data, dataKey, grid }) => {
         <div className='chart'>Linecharts
             <h3 className='chartTitle'>{title}</h3>
             <ResponsiveContainer width="100%" aspect={4 / 1}>
-                <LineChart data={data}>
-                    
+                <LineChart data={data}>                   
                     <XAxis dataKey="name" stroke='black' />
                     
                     <Line type="step" dataKey={dataKey} stroke="red" />
@@ -30,7 +27,6 @@ export const Chart = ({ title, data, dataKey, grid }) => {
                     <ReferenceLine y={average} stroke="blue" strokeDasharray="3 3" />   
                 </LineChart>
             </ResponsiveContainer>
-
         </div>     
     )
 }
