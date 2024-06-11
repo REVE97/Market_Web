@@ -5,6 +5,8 @@
 ####   => 차트 노드 모듈
 2. npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome --legacy-peer-deps
 ####   => 제품 리뷰 별점 노드 모듈
+3. npm install styled-components --legacy-peer-deps
+#### => 상단 네비게이션 내부 CSS 노드 모듈
 
 <hr />
 
@@ -22,7 +24,7 @@
 4. DB 와의 연동작업 (완료)
 
 ### 2024.5.31 => Mentoring Feedback :
-1. 인기 검색어 순위 버튼 만들기
+1. 인기 검색어 순위 버튼 만들기 (완료)
 2. 상세페이지에 차트 추가 및 레이어 배치 수정
 3. 회원가입 추가
 
@@ -44,10 +46,12 @@
 6. 사이드바 메가메뉴 네비게이션으로 개선 (완료)
 7. axios 로 api 호출 (완료)
 
-### 2024.6.1 ~ Todo
+### 2024.6.1 ~ 6.11
 1. 변동가격 정렬순 추가 (완료)
 2. LineChart API 연동 (완료)
-3. BarChart API 연동
-4. PieChart API 연동
-5. 인기 검색어 순위 버튼 만들기
-6. 회원가입 추가
+3. 상단 네비게이션 추가 (완료)
+
+### 2024.6.12 ~ Todo
+1. BarChart API 연동
+2. PieChart API 연동
+3. 회원가입 추가
