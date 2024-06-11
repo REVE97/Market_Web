@@ -79,11 +79,9 @@ export const Main = ({ products, setProducts, convertPrice }) => {
       <hr></hr><br></br>
       
       <div className={styles.filter}>
-        <p onClick={()=> sortProduct("basic")}>기본순</p>
+        <p onClick={()=> sortProduct("price_change_rate_low")}>할인 가격률 변동순</p>
         <p onClick={()=> sortProduct("high")}>현재 가격 높은순</p>
         <p onClick={()=> sortProduct("row")}>현재 가격 낮은순</p>
-        <p onClick={()=> sortProduct("price_change_rate_high")}>가격 변화율 높은 순</p>
-        <p onClick={()=> sortProduct("price_change_rate_low")}>가격 변화율 낮은 순</p>
       </div>
       
       <main className={styles.flex_wrap}>
