@@ -22,6 +22,30 @@ export const userData = [
     { name: '2024.05.20', 'Price': 3476 },
 ]
 
+// 연동 데이터 형식
+// axios.get(`http://3.34.188.16:8080/api/prices/product/${productId}`) 차트 데이터 API
+// [
+//     {
+//         "product_id":2,
+//         "id": 101,
+//         "coupon_price": 150000,
+//         "crawl_time":"2024-06-08T15:00:00"
+//     },
+//     {
+//         "product_id":2,
+//         "id": 102,
+//         "coupon_price": 150000,
+//         "crawl_time":"2024-06-08T21:00:00"
+//     },
+//     {
+//         "product_id":2,
+//         "id": 103,
+//         "coupon_price": 150000,
+//         "crawl_time":"2024-06-09T09:00:00"
+//     }
+// ]
+
+
 // BarChart 데이터
 
 // 적용할 json 파일 데이터 형식 

@@ -4,13 +4,7 @@ import { useEffect, useState } from "react";
 import styles from "./detail.module.css";
 import axios from "axios";
 
-import { Chart } from '../linechart/linechart.jsx'
-import { userData } from '../../ChartData.js';
-
-// import { BarChart } from '../barchart/barchart.jsx'
-// import { parseData } from "../../ChartData.js";
-// import { PieCharts } from '../piechart/piechart.jsx';
-
+import { ProductLineChart } from '../linechart/linechart.jsx' // 경로 확인 필요
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -31,16 +25,14 @@ const Rating = ({ rating }) => {
       ))}
       {hasHalfStar && <FontAwesomeIcon key="half" icon={faStarHalfAlt} />}
       {emptyStarsArray.map((_, index) => (
-        <FontAwesomeIcon key={`empty-${index}`} icon={emptyStars} />
+        <FontAwesomeIcon key={`empty-${index}`} icon={faStar} />
       ))}
     </div>
   );
 };
 
-
-export const Detail = ( {convertPrice, cart, setCart}) => {
-  
-  const {id} = useParams();
+export const Detail = ({ convertPrice, cart, setCart }) => {
+  const { id } = useParams();
   const [product, setProduct] = useState({});
 
   // 알림 메시지 배열
@@ -49,10 +41,9 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
   // 데이터 연동
   useEffect(() => {
     axios.get("http://3.34.188.16:8080/api/products/").then((response) => {
-      setProduct(response.data.find((product) => product.id === parseInt(id)))
+      setProduct(response.data.find((product) => product.id === parseInt(id)));
     });
   }, [id]);
-
 
   // 찜목록 기능 
   const handleCart = () => {
@@ -153,23 +144,14 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
       </main>
       
       <hr />
-      
         
       {/* LineCharts 그래프 */}
-      <div className={styles.LineCharts}>
-        <Chart
-          data={userData}
-          title="Price LineCharts"
-          grid
-          dataKey="Price"
-          />
-      </div>
-    
+      <ProductLineChart productId={id} />
+
       {/* PieCharts 그래프 */}
       {/* <div>
         <PieCharts />
       </div> */}
-
 
       {/* BarCharts 그래프 */}
       {/* <div>
@@ -180,7 +162,6 @@ export const Detail = ( {convertPrice, cart, setCart}) => {
           datekey="date,openClose,highLow"
         ></BarChart>
       </div>  */}
-      
     </>
   );
 };
