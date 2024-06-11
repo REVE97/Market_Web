@@ -51,7 +51,7 @@
 2. LineChart API 연동 (완료)
 3. 상단 네비게이션 추가 (완료)
 
-### 2024.6.11 ~ Todo
+### 2024.6.12 ~ Todo
 1. BarChart API 연동
 2. PieChart API 연동
 3. 회원가입 추가
