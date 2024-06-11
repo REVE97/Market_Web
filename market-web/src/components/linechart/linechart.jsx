@@ -28,7 +28,7 @@ export const ProductLineChart = ({ productId }) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 450, margin: 10 }}>
       <div style={{ width: '80%' }}>
-        <h3 style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif', fontSize: '15px', fontWeight: 'bold', marginBottom: 10}}>LineChart</h3>
+        <h3 style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif', fontSize: '20px', fontWeight: 'bold', margin: 20}}>LineChart</h3>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart
             width={500}

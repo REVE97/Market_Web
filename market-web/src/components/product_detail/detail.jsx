@@ -5,6 +5,7 @@ import styles from "./detail.module.css";
 import axios from "axios";
 
 import { ProductLineChart } from '../linechart/linechart.jsx'
+import { ProductBarChart } from '../barchart/barchart.jsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
@@ -149,10 +150,10 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       {/* LineCharts 그래프 */}
       <ProductLineChart productId={id} />
 
-      {/* PieCharts 그래프 */}
-      {/* <div>
-        <PieCharts />
-      </div> */}
+      <hr />
+      
+      {/* BarCharts 그래프 */}
+      <ProductBarChart productId={id} />
 
     </>
   );

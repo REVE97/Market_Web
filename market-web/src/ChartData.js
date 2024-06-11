@@ -24,14 +24,23 @@
 
 // BarChart 
 // 적용할 json 파일 데이터 형식 
-// export const parseData = [
-//     {
-//         date: "2024.3.1",
-//         openClose: [1920000,1930000],
-//         highLow: [1800000,2000000]
-//     }
-//     ...
-// ]
+axios.get(`http://3.34.188.16:8080/api/prices/summary/${product_id}`)
+
+[
+    {
+        "product_id":5,
+        "crawl_time":"2024-06-08",
+        "high_price": 358990,
+        "low_price": 358990
+    },
+    {
+        "product_id":5,
+        "crawl_time":"2024-06-08",
+        "high_price": 358990,
+        "low_price": 358990
+    }
+
+]
 
 // 임의 랜덤 차트
 export const parseData = [
