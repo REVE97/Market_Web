@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import styles from "./detail.module.css";
 import axios from "axios";
 
-import { ProductLineChart } from '../linechart/linechart.jsx' // 경로 확인 필요
+import { ProductLineChart } from '../linechart/linechart.jsx'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 

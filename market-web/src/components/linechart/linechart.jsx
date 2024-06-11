@@ -20,25 +20,27 @@ export const ProductLineChart = ({ productId }) => {
   }, [productId]);
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <LineChart
-        width={500}
-        height={300}
-        data={chartData}
-        margin={{
-          top: 5, right: 30, left: 20, bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="crawl_time" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="coupon_price" stroke="#8884d8" activeDot={{ r: 8 }} />
-      </LineChart>
-    </ResponsiveContainer>
+    <div style={{ width: '60%', height: 450 , margin: 10 }}>
+      <h3 style={{ textAlign: 'center' }}>LineChart</h3>
+      <ResponsiveContainer width="100%" height={400}>
+        <LineChart
+          width={500}
+          height={300}
+          data={chartData}
+          margin={{
+            top: 5, right: 30, left: 20, bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="crawl_time" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="coupon_price" stroke="#8884d8" activeDot={{ r: 8 }} />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
 export default ProductLineChart;
-

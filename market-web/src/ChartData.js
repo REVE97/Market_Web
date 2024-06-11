@@ -1,28 +1,4 @@
-// LineChart 데이터
-export const userData = [
-    { name: '2024.5.1', 'Price': 4490 },
-    { name: '2024.5.2', 'Price': 3430 },
-    { name: '2024.5.3', 'Price': 2490 },
-    { name: '2024.5.4', 'Price': 3390 },
-    { name: '2024.5.5', 'Price': 1230 },
-    { name: '2024.5.6', 'Price': 5290 },
-    { name: '2024.5.7', 'Price': 2390 },
-    { name: '2024.5.8', 'Price': 4540 },
-    { name: '2024.5.9', 'Price': 4235 },
-    { name: '2024.05.10', 'Price': 1960 },
-    { name: '2024.05.11', 'Price': 1378 },
-    { name: '2024.05.12', 'Price': 1828 },
-    { name: '2024.05.13', 'Price': 2061 },
-    { name: '2024.05.14', 'Price': 1293 },
-    { name: '2024.05.15', 'Price': 2037 },
-    { name: '2024.05.16', 'Price': 2985 },
-    { name: '2024.05.17', 'Price': 3574 },
-    { name: '2024.05.18', 'Price': 3484 },
-    { name: '2024.05.19', 'Price': 2949 },
-    { name: '2024.05.20', 'Price': 3476 },
-]
-
-// 연동 데이터 형식
+// LineChart 연동 데이터 형식
 // axios.get(`http://3.34.188.16:8080/api/prices/product/${productId}`) 차트 데이터 API
 // [
 //     {
@@ -46,8 +22,7 @@ export const userData = [
 // ]
 
 
-// BarChart 데이터
-
+// BarChart 
 // 적용할 json 파일 데이터 형식 
 // export const parseData = [
 //     {
