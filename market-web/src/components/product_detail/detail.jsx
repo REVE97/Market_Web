@@ -154,15 +154,6 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
         <PieCharts />
       </div> */}
 
-      {/* BarCharts 그래프 */}
-      {/* <div>
-        <BarChart
-          data={parseData}
-          title="Price BarCharts"
-          grid
-          datekey="date,openClose,highLow"
-        ></BarChart>
-      </div>  */}
     </>
   );
 };
