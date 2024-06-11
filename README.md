@@ -5,6 +5,8 @@
 ####   => 차트 노드 모듈
 2. npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome --legacy-peer-deps
 ####   => 제품 리뷰 별점 노드 모듈
+3. npm install styled-components --legacy-peer-deps
+#### => 상단 네비게이션 내부 CSS 노드 모듈
 
 <hr />
 
