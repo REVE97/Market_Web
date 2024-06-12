@@ -60,10 +60,13 @@ export const Nav = () => {
     });
   }, []);
 
-  // 할인율이 높은 순으로 상위 5개의 제품 추출
-  const topDiscountProducts = products
-    .sort((a, b) => b.discount_rate - a.discount_rate)
-    .slice(0, 5);
+  // 상품평이 많은 순으로 제품 추출 및 중복 타이틀 제거
+  const topDiscountProducts = Array.from(
+    new Set(products.map(product => product.title))
+  )
+  .map(title => products.find(product => product.title === title))
+  .sort((a, b) => b.review_count - a.review_count)
+  .slice(0, 10);
 
   return (
     <NavContainer>

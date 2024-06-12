@@ -82,8 +82,9 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
             
             {/* 제품 리뷰 별점 */}
             <div className={styles.rating}>
-              <span className={styles.rating_line}>Average Rating : {product.rating}</span>
+              <span className={styles.rating_line}>Average Rating : {product.rating} </span>
               <Rating rating={product.rating} />
+              <span className={styles.rating_line}>{product.review_count}개 상품평</span>
             </div>
 
             <hr />
