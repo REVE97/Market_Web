@@ -148,19 +148,23 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       </main>
       
       <hr />
+      
+      <div style={{ display: 'flex' }}>
+        {/* PieCharts 그래프 */}
+        <div style={{ flex: 1 }}>
+          <PieChartWithGroupedData productId={id} />
+        </div>
         
-      {/* LineCharts 그래프 */}
-      <ProductLineChart productId={id} />
+        {/* LineCharts 그래프 */}
+        <div style={{ flex: 6 }}>
+          <ProductLineChart productId={id} />
+        </div>
+      </div>
 
       <hr />
       
       {/* BarCharts 그래프 */}
       <ProductBarChart productId={id} />
-
-      <hr />
-      
-      {/* PieCharts 그래프 */}
-      <PieChartWithGroupedData productId={id} />
 
       <hr /><br />
 
