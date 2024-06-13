@@ -151,7 +151,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       
       <div style={{ display: 'flex' }}>
         {/* PieCharts 그래프 */}
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1 , marginTop: 50 }}>
           <PieChartWithGroupedData productId={id} />
         </div>
         
