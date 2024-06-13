@@ -162,6 +162,8 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       {/* PieCharts 그래프 */}
       <PieChartWithGroupedData productId={id} />
 
+      <hr /><br />
+
     </>
   );
 };
