@@ -6,6 +6,7 @@ import axios from "axios";
 
 import { ProductLineChart } from '../linechart/linechart.jsx'
 import { ProductBarChart } from '../barchart/barchart.jsx';
+import { PieChartWithGroupedData } from '../piechart/piechart.jsx';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
@@ -155,6 +156,11 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       
       {/* BarCharts 그래프 */}
       <ProductBarChart productId={id} />
+
+      <hr />
+      
+      {/* PieCharts 그래프 */}
+      <PieChartWithGroupedData productId={id} />
 
     </>
   );

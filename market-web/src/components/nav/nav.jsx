@@ -66,7 +66,7 @@ export const Nav = () => {
   )
   .map(title => products.find(product => product.title === title))
   .sort((a, b) => b.review_count - a.review_count)
-  .slice(0, 10);
+  .slice(0, 5);
 
   return (
     <NavContainer>

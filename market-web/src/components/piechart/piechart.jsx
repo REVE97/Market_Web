@@ -1,75 +1,111 @@
-/* eslint-disable no-shadow */
-import React from 'react';
-import { PieChart, Pie, Cell } from 'recharts';
-import './piechart.css';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { PieChart, Pie, Sector, Cell } from 'recharts';
 
-const RADIAN = Math.PI / 180;
-const data = [
-  { name: 'A', value: 80, color: '#ff0000' },
-  { name: 'B', value: 45, color: '#00ff00' },
-  { name: 'C', value: 25, color: '#0000ff' },
-];
-const cx = 150;
-const cy = 200;
-const iR = 50;
-const oR = 100;
-const value = 50;
+const renderActiveShape = (props) => {
+  const RADIAN = Math.PI / 180;
+  const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
+  const sin = Math.sin(-RADIAN * midAngle);
+  const cos = Math.cos(-RADIAN * midAngle);
+  const sx = cx + (outerRadius + 10) * cos;
+  const sy = cy + (outerRadius + 10) * sin;
+  const mx = cx + (outerRadius + 30) * cos;
+  const my = cy + (outerRadius + 30) * sin;
+  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+  const ey = my;
+  const textAnchor = cos >= 0 ? 'start' : 'end';
 
-const needle = (value, data, cx, cy, iR, oR, color) => {
-  let total = 0;
-  data.forEach((v) => {
-    total += v.value;
-  });
-  const ang = 180.0 * (1 - value / total);
-  const length = (iR + 2 * oR) / 3;
-  const sin = Math.sin(-RADIAN * ang);
-  const cos = Math.cos(-RADIAN * ang);
-  const r = 5;
-  const x0 = cx + 5;
-  const y0 = cy + 5;
-  const xba = x0 + r * sin;
-  const yba = y0 - r * cos;
-  const xbb = x0 - r * sin;
-  const ybb = y0 + r * cos;
-  const xp = x0 + length * cos;
-  const yp = y0 + length * sin;
-
-  return [
-    <circle key="circle" cx={x0} cy={y0} r={r} fill={color} stroke="none" />,
-    <path
-      key="path"
-      d={`M${xba} ${yba}L${xbb} ${ybb} L${xp} ${yp} L${xba} ${yba}`}
-      stroke="none"
-      fill={color}
-    />,
-  ];
-};
-
-export const PieCharts = () => {
   return (
-    <div className='chart'>PieCharts
-    <PieChart width={400} height={300}>
-      <Pie
-        dataKey="value"
-        startAngle={180}
-        endAngle={0}
-        data={data}
+    <g>
+      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.name}</text>
+      <Sector
         cx={cx}
         cy={cy}
-        innerRadius={iR}
-        outerRadius={oR}
+        innerRadius={innerRadius}
+        outerRadius={outerRadius}
+        startAngle={startAngle}
+        endAngle={endAngle}
+        fill={fill}
+      />
+      <Sector
+        cx={cx}
+        cy={cy}
+        startAngle={startAngle}
+        endAngle={endAngle}
+        innerRadius={outerRadius + 6}
+        outerRadius={outerRadius + 10}
+        fill={fill}
+      />
+      <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
+      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">{`Price: ${value}`}</text>
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
+        {`(Rate ${(percent * 100).toFixed(2)}%)`}
+      </text>
+    </g>
+  );
+};
+
+// 데이터 그룹화 함수
+const groupDataByCouponPrice = (data) => {
+  const groupedData = data.reduce((acc, item) => {
+    const price = item.coupon_price;
+    if (!acc[price]) {
+      acc[price] = { name: `Price: ${price}`, value: 0 };
+    }
+    acc[price].value += 1;
+    return acc;
+  }, {});
+  
+  return Object.values(groupedData);
+};
+
+export const PieChartWithGroupedData = ({ productId }) => {
+  const [data, setData] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await axios.get(`http://3.34.188.16:8080/api/prices/product/${productId}`);
+        const groupedData = groupDataByCouponPrice(result.data);
+        setData(groupedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [productId]);
+
+  const onPieEnter = (_, index) => {
+    setActiveIndex(index);
+  };
+
+  const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8', '#8DD1E1', '#82CA9D', '#A4DE6C', '#D0ED57', '#FFC658'];
+
+  return (
+    <div style={{}}>
+    <PieChart width={400} height={400}>
+      <Pie
+        activeIndex={activeIndex}
+        activeShape={renderActiveShape}
+        data={data}
+        cx={200}
+        cy={200}
+        innerRadius={60}
+        outerRadius={80}
         fill="#8884d8"
-        stroke="none"
+        dataKey="value"
+        onMouseEnter={onPieEnter}
       >
         {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={entry.color} />
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Pie>
-      {needle(value, data, cx, cy, iR, oR, '#d0d000')}
     </PieChart>
     </div>
   );
 };
 
-export default PieCharts;
-
+export default PieChartWithGroupedData;
