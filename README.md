@@ -30,7 +30,7 @@
 ### 2024.6.5 => Mentoring Feedback :
 1. 상세페이지 차트 API 연동 (완료)
 
-### 2024.6.14 => Menotoring Feedback :
+### 2024.6.14 => Mentoring Feedback :
 1. 회원가입 추가
 2. 상품평순 네비게이션 상품평 데이터 추가
 3. 상세페이지 영어 한글로 변경
