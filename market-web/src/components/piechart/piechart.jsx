@@ -46,18 +46,19 @@ const renderActiveShape = (props) => {
   );
 };
 
-// 데이터 그룹화 함수
+// 데이터 그룹화 및 정렬 함수
 const groupDataByCouponPrice = (data) => {
   const groupedData = data.reduce((acc, item) => {
     const price = item.coupon_price;
     if (!acc[price]) {
-      acc[price] = { name: `Price: ${price}`, value: 0 };
+      acc[price] = { name: `Price: ${price}원`, value: 0 };
     }
     acc[price].value += 1;
     return acc;
   }, {});
-  
-  return Object.values(groupedData);
+
+  // 객체를 배열로 변환하고 value 기준으로 정렬
+  return Object.values(groupedData).sort((a, b) => a.value - b.value);
 };
 
 export const PieChartWithGroupedData = ({ productId }) => {
@@ -109,5 +110,3 @@ export const PieChartWithGroupedData = ({ productId }) => {
 };
 
 export default PieChartWithGroupedData;
-
-
