@@ -1,17 +1,41 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import styles from "./topNavigationBar.module.css";
 
-export const TopNavigationBar = ( {cart} ) => {
-  
+export const TopNavigationBar = ({ cart }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
   // 검색 엔진 함수
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchTerm.trim()) {
-      navigate(`/search?query=${searchTerm.trim()}`);
+    const trimmedSearchTerm = searchTerm.trim();
+
+    if (trimmedSearchTerm) {
+      
+      // 검색어를 데이터베이스에 저장
+      axios.post('http://3.34.188.16:8080/api/keywords', {
+        keyword: trimmedSearchTerm,
+      })
+      .then(() => {
+        // 데이터베이스에서 키워드 목록 가져오기
+        return axios.get('http://3.34.188.16:8080/api/keywords');
+      })
+      .then(response => {
+        const keywords = response.data;
+
+        // keyword를 로그로 출력
+        keywords.forEach(keyword => {
+          console.log(`Keyword: ${keyword.keyword}`);
+        });
+
+        // 검색 결과 페이지로 이동
+        navigate(`/search?query=${trimmedSearchTerm}`);
+      })
+      .catch(error => {
+        console.error("Error saving or fetching keywords:", error);
+      });
     }
   };
 
@@ -58,20 +82,20 @@ export const TopNavigationBar = ( {cart} ) => {
           </div>
         </Link>
         
-        {/* <Link to="/login">
+        <Link to="/">
           <div className={styles.mypage}>
             <img src="/images/icon-user.svg" alt="user" />
             <span>로그인</span>
           </div>
-        </Link> */}
+        </Link>
 
 
-        {/* <Link to="/sign">
+        <Link to="/">
           <div className={styles.mypage}>
             <img src="/images/icon-power.svg" alt="login" />
             <span>회원가입</span>
           </div>
-        </Link> */}
+        </Link>
         
       </div>
     </header>

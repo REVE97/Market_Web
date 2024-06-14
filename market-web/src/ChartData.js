@@ -41,3 +41,9 @@
 //     }
 
 // ]
+
+// 인기검색어 axios
+// 검색어를 서버로 보내기
+axios.post('http://3.34.188.16:8080/api/keywords')
+// 검색어를 서버로부터 전달 요청
+axios.get('http://3.34.188.16:8080/api/keywords')

@@ -83,7 +83,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
             
             {/* 제품 리뷰 별점 */}
             <div className={styles.rating}>
-              <span className={styles.rating_line}>Average Rating : {product.rating} </span>
+              <span className={styles.rating_line}>리뷰 평점 : {product.rating} </span>
               <Rating rating={product.rating} />
               <span className={styles.rating_line}>{product.review_count}개 상품평</span>
             </div>
@@ -92,7 +92,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
             
             {/* 가격 정보 */}
             <span className={styles.price}> 
-              Origin Price : {' '}
+              <span style={{ fontSize:'30px' }}>정가 : {' '}</span>
               <span style={{ textDecoration: 'line-through', opacity: 0.4 }}> 
                  {new Intl.NumberFormat().format(product.origin_price)}
               </span>
@@ -100,7 +100,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
               <span className={styles.discount_rate}>{product.discount_rate}</span>
               <br />
               
-              Coupon Price : {' '}
+              <span style={{ fontSize:'30px' }}>할인가 : {' '}</span>
               <span style={{color:'red'}}> 
                  {new Intl.NumberFormat().format(product.coupon_price)}
               </span>

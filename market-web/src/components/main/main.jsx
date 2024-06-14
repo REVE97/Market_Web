@@ -1,5 +1,5 @@
 import styles from "./main.module.css";
-import { EventBanner } from "../eventBanner/eventBanner";
+// import { EventBanner } from "../eventBanner/eventBanner";
 import { Product } from "../products/product";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -75,8 +75,8 @@ export const Main = ({ products, setProducts, convertPrice }) => {
 
   return (
     <>
-      <EventBanner />
-      <hr></hr><br></br>
+      {/* <EventBanner /> */}
+      {/* <hr></hr><br></br> */}
       
       <div className={styles.filter}>
         <p onClick={()=> sortProduct("price_change_rate_low")}>할인 가격률 변동순</p>

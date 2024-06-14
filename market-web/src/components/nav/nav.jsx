@@ -35,8 +35,15 @@ const ProductName = styled.span`
 `;
 
 const DiscountRate = styled.span`
+  margin-left: 10px;
   color: #ff6b6b;
   font-size: 10px;
+`;
+
+const Review = styled.span`
+  color: #ff6b6b;
+  font-size: 10px;
+  color: blue;
 `;
 
 const ProductLink = styled(Link)`
@@ -72,6 +79,7 @@ export const Nav = () => {
     <NavContainer>
       {topDiscountProducts.map((product) => (
         <Product key={product.id}>
+          <Review>{product.review_count}개 상품평</Review>
           <DiscountRate>{product.discount_rate}</DiscountRate>
           <ProductName>{product.name}</ProductName>
           <ProductLink to={`/product/${product.id}`}>{product.title}</ProductLink>

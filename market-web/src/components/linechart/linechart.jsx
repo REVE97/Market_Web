@@ -41,9 +41,9 @@ export const ProductLineChart = ({ productId }) => {
       <div style={{ width: '80%' }}>
         <h3 style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif', fontSize: '20px', fontWeight: 'bold', margin: 20}}>LineChart</h3>
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
-          <p style={{ color :'red', fontWeight: 'bold' }}>역대 최고값 : {highestPrice}원</p>
-          <p style={{ color:'blue', fontWeight: 'bold' }}>역대 최저값 : {lowestPrice}원</p>
-          <p style={{ color:'green', fontWeight: 'bold' }}>평균값 : {averagePrice.toFixed(0)}원</p>
+          <p style={{ color : 'red', fontWeight: 'bold' }}>역대 최고값 : {highestPrice}원</p>
+          <p style={{ color: 'blue', fontWeight: 'bold' }}>역대 최저값 : {lowestPrice}원</p>
+          <p style={{ color: 'green', fontWeight: 'bold' }}>평균값 : {averagePrice.toFixed(0)}원</p>
         </div>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart
