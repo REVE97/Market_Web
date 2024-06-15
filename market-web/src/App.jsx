@@ -1,13 +1,15 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { TopNavigationBar } from "./components/header/topNavigationBar/topNavigationBar";
-import Home from "./pages/home";
-import Product from "./pages/product";
-import Basket  from "./pages/basket.jsx";
 import { Sidebar } from "./components/sidebar/sidebar.jsx";
 import { useState } from "react";
 import { FilteredProducts } from "./components/filteredProducts/filteredProducts.jsx";
 import { Nav } from "./components/nav/nav.jsx";
+import { Login } from "./components/login/login.jsx";
+import { Signup } from "./components/signup/signup.jsx";
+import Home from "./pages/home";
+import Product from "./pages/product";
+import Basket  from "./pages/basket.jsx";
 
 function App() {
   
@@ -75,6 +77,16 @@ function App() {
           {/* 찜목록 페이지 생성 */}
           <Route path="/favorite" element={
           <Basket cart={cart} setCart={setCart} convertPrice={convertPrice} />} 
+          />
+          
+          {/* 로그인 페이지 생성 */}
+          <Route path="/login" element={
+            <Login /> }
+          />
+          
+          {/* 회원가입 페이지 생성 */}
+          <Route path="/signup" element={
+            <Signup /> }
           />
 
         </Routes>
