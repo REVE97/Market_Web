@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../signup/signup.css';
 
 export const Signup = () => {
   const [nickname, setNickname] = useState('');
@@ -23,23 +24,23 @@ export const Signup = () => {
   };
 
   return (
-    <div>
+    <div className="signup-container">
       <h2>회원가입</h2>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Nickname : </label>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit} className="signup-form">
+        <div className="form-group">
+          <label>Nickname</label>
           <input type="text" value={nickname} onChange={(e) => setNickname(e.target.value)} required />
         </div>
-        <div>
-          <label>ID : </label>
+        <div className="form-group">
+          <label>ID</label>
           <input type="text" value={id} onChange={(e) => setId(e.target.value)} required />
         </div>
-        <div>
-          <label>Password : </label>
+        <div className="form-group">
+          <label>Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit" className="signup-button">Signup</button>
       </form>
     </div>
   );

@@ -19,7 +19,7 @@ export const TopNavigationBar = ({ cart }) => {
         keyword: trimmedSearchTerm,
       })
       .then(() => {
-        // 데이터베이스에서 키워드 목록 가져오기
+      // 데이터베이스에서 키워드 목록 가져오기
         return axios.get('http://3.34.188.16:8080/api/keywords');
       })
       .then(response => {
