@@ -131,3 +131,27 @@
 
 
 
+
+.keywordContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+.keywordButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.keywordButton:hover {
+  background-color: #777;
+}
+
+
