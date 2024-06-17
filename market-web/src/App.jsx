@@ -11,6 +11,8 @@ import Home from "./pages/home";
 import Product from "./pages/product";
 import Basket  from "./pages/basket.jsx";
 
+import Keyword from "./components/keyword/keyword.jsx";
+
 function App() {
   
   const [products, setProducts] = useState([]);
@@ -24,6 +26,8 @@ function App() {
     <BrowserRouter>
     
         <TopNavigationBar cart={cart} />
+
+        <Keyword />
 
         <hr />
 
