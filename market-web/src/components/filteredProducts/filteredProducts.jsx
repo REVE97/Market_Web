@@ -17,6 +17,7 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
 
   const [pageChunk, setPageChunk] = useState(0);
   const pagesPerChunk = 10; // 페이지 청크당 페이지 수
+  
   const [pageInput, setPageInput] = useState('');
 
   useEffect(() => {
@@ -80,9 +81,12 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
 
   const handlePageInputSubmit = () => {
     const pageNumber = parseInt(pageInput, 10);
-    if (!isNaN(pageNumber)) {
+    if (!isNaN(pageNumber) && pageNumber > 0 && pageNumber <= totalPages) {
       changePage(pageNumber);
+    } else {
+      alert(`페이지 번호는 1과 ${totalPages} 사이여야 합니다.`);
     }
+    setPageInput('');
   };
 
   const nextChunk = () => {
@@ -134,6 +138,8 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
         <div className={styles.pageInput}>
           <input 
             type="number" 
+            min="1"
+            max={totalPages}
             value={pageInput} 
             onChange={handlePageInputChange} 
             placeholder="페이지 번호 입력" 

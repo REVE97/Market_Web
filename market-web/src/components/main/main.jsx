@@ -53,15 +53,19 @@ export const Main = ({ products, setProducts, convertPrice }) => {
     }
   };
 
+  // 사용자 페이지 입력 버튼 함수
   const handlePageInputChange = (e) => {
     setPageInput(e.target.value);
   };
 
   const handlePageInputSubmit = () => {
     const pageNumber = parseInt(pageInput, 10);
-    if (!isNaN(pageNumber)) {
+    if (!isNaN(pageNumber) && pageNumber > 0 && pageNumber <= totalPages) {
       changePage(pageNumber);
+    } else {
+      alert(`페이지 번호는 1과 ${totalPages} 사이여야 합니다.`);
     }
+    setPageInput('');
   };
   
   // 현재 페이지에 맞는 제품 리스트를 계산
@@ -120,6 +124,8 @@ export const Main = ({ products, setProducts, convertPrice }) => {
         <div className={styles.pageInput}>
           <input 
             type="number" 
+            min="1"
+            max={totalPages}
             value={pageInput} 
             onChange={handlePageInputChange} 
             placeholder="페이지 번호 입력" 
@@ -131,3 +137,4 @@ export const Main = ({ products, setProducts, convertPrice }) => {
     </>
   );
 };
+
