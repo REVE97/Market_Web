@@ -16,7 +16,7 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   const itemsPerPage = 9; // 페이지에 나타낼 product 제품수 설정
 
   const [pageChunk, setPageChunk] = useState(0);
-  const pagesPerChunk = 20; // 페이지 청크당 페이지 수
+  const pagesPerChunk = 10; // 페이지 청크당 페이지 수
   const [pageInput, setPageInput] = useState('');
 
   useEffect(() => {
