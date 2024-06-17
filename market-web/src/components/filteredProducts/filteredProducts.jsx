@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { Product } from '../products/product';
-// import { EventBanner } from "../eventBanner/eventBanner";
 import axios from 'axios';
 import styles from "../main/main.module.css";
 
@@ -84,8 +83,7 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
 
   return (
     <>
-      {/* <EventBanner />
-      <hr></hr><br></br> */}
+      <p>CurrentPage : {currentPage} {'|'} TotalPage : {totalPages}</p>
 
       <div className={styles.filter}>
         <p onClick={()=> sortProduct("price_change_rate_low")}>할인 가격률 변동순</p>       

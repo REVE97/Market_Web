@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-// 내부 CSS
+// CSS
 const NavContainer = styled.div`
   display: flex;
   gap: 1rem;
@@ -18,8 +18,8 @@ const Product = styled.div`
   align-items: center;
   padding: 0.5rem 1rem;
   background-color: #ffffff;
-  border: 1px solid #dee2e6;
-  border-radius: 4px;
+  border: 3px solid #D5D5D5;
+  border-radius: 20px;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
   &:hover {
@@ -29,22 +29,21 @@ const Product = styled.div`
 `;
 
 const ProductName = styled.span`
-  margin-left: 10px;
   font-weight: bold;
   color: #343a40;
+  margin-left: 10px;
 `;
 
 const DiscountRate = styled.span`
-  margin-left: 10px;
   color: #ff6b6b;
   font-size: 10px;
 `;
 
-const Review = styled.span`
-  color: #ff6b6b;
-  font-size: 10px;
-  color: blue;
-`;
+// const Review = styled.span`
+//   color: #ff6b6b;
+//   font-size: 10px;
+//   color: blue;
+// `;
 
 const ProductLink = styled(Link)`
   text-decoration: none;
@@ -67,19 +66,24 @@ export const Nav = () => {
     });
   }, []);
 
-  // 상품평이 많은 순으로 제품 추출 및 중복 타이틀 제거
-  const topDiscountProducts = Array.from(
-    new Set(products.map(product => product.title))
+  // lowestPrice가 true인 제품들을 필터링하고 review_count로 정렬
+  const filteredProducts = products
+    .filter(product => product.lowestPrice)
+    .sort((a, b) => b.review_count - a.review_count);
+
+  // brand_id가 중복되지 않도록 선택
+  const topLowestPriceProducts = Array.from(
+    new Set(filteredProducts.map(product => product.brand_id))
   )
-  .map(title => products.find(product => product.title === title))
-  .sort((a, b) => b.review_count - a.review_count)
+  .map(brand_id => filteredProducts.find(product => product.brand_id === brand_id))
   .slice(0, 5);
 
   return (
     <NavContainer>
-      {topDiscountProducts.map((product) => (
+      <p style={{ fontWeight:'bold', marginLeft:'3px', marginTop:'4px' }}>역대최저가 : </p>
+      {topLowestPriceProducts.map((product) => (
         <Product key={product.id}>
-          <Review>{product.review_count}개 상품평</Review>
+          {/* <Review>{product.review_count}개 상품평</Review> */}
           <DiscountRate>{product.discount_rate}</DiscountRate>
           <ProductName>{product.name}</ProductName>
           <ProductLink to={`/product/${product.id}`}>{product.title}</ProductLink>
@@ -90,3 +94,4 @@ export const Nav = () => {
 }
 
 export default Nav;
+

@@ -65,3 +65,9 @@
   color: white;
   border: none;
 }
+
+.currentPage {
+  text-align: Left;
+  margin-top: 40px;
+  font-weight: bold;
+}

@@ -29,8 +29,6 @@ function App() {
 
         <Keyword />
 
-        <hr />
-
         <Nav />
   
         <hr /><br></br>

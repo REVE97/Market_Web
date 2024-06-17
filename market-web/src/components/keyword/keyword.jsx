@@ -38,7 +38,8 @@ export const Keyword = () => {
       backgroundColor: 'white',
       marginTop: '10px',
       marginBottom:'10px',
-      marginLeft: '10px'
+      marginLeft: '10px',
+      boxShadow: '0px 4px 5px rgba(0, 0, 0, 0.1)'
     },
     keywordTitle: {
       fontWeight: 'bold',
