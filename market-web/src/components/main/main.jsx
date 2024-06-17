@@ -10,6 +10,7 @@ export const Main = ({ products, setProducts, convertPrice }) => {
   
   const [pageChunk, setPageChunk] = useState(0);
   const pagesPerChunk = 20;  // 페이지 청크당 페이지 수
+  const [pageInput, setPageInput] = useState('');
 
   // 데이터 입력
   useEffect(() => {                                             
@@ -46,7 +47,21 @@ export const Main = ({ products, setProducts, convertPrice }) => {
 
   // 페이지 변경 함수
   const changePage = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+      setPageChunk(Math.floor((pageNumber - 1) / pagesPerChunk));
+    }
+  };
+
+  const handlePageInputChange = (e) => {
+    setPageInput(e.target.value);
+  };
+
+  const handlePageInputSubmit = () => {
+    const pageNumber = parseInt(pageInput, 10);
+    if (!isNaN(pageNumber)) {
+      changePage(pageNumber);
+    }
   };
   
   // 현재 페이지에 맞는 제품 리스트를 계산
@@ -100,8 +115,20 @@ export const Main = ({ products, setProducts, convertPrice }) => {
         ))}
         
         {pageChunk < totalChunks - 1 && <button onClick={nextChunk}>다음</button>}
+
+        {/* 사용자 페이지 번호 입력 이동 버튼 */}
+        <div className={styles.pageInput}>
+          <input 
+            type="number" 
+            value={pageInput} 
+            onChange={handlePageInputChange} 
+            placeholder="페이지 번호 입력" 
+          />
+          <button onClick={handlePageInputSubmit}>이동</button>
+        </div>
       </div>
+      
+      
     </>
   );
 };
-

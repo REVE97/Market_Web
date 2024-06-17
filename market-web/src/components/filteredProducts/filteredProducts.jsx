@@ -17,6 +17,7 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
 
   const [pageChunk, setPageChunk] = useState(0);
   const pagesPerChunk = 20; // 페이지 청크당 페이지 수
+  const [pageInput, setPageInput] = useState('');
 
   useEffect(() => {
     axios.get("http://3.34.188.16:8080/api/products/").then((response) => {
@@ -67,7 +68,21 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
   const totalChunks = Math.ceil(totalPages / pagesPerChunk);
 
   const changePage = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+      setPageChunk(Math.floor((pageNumber - 1) / pagesPerChunk));
+    }
+  };
+
+  const handlePageInputChange = (e) => {
+    setPageInput(e.target.value);
+  };
+
+  const handlePageInputSubmit = () => {
+    const pageNumber = parseInt(pageInput, 10);
+    if (!isNaN(pageNumber)) {
+      changePage(pageNumber);
+    }
   };
 
   const nextChunk = () => {
@@ -114,6 +129,18 @@ export const FilteredProducts = ({ products, setProducts, convertPrice }) => {
         ))}
         
         {pageChunk < totalChunks - 1 && <button onClick={nextChunk}>다음</button>}
+
+        {/* 사용자 페이지 번호 입력 이동 버튼 */}
+        <div className={styles.pageInput}>
+          <input 
+            type="number" 
+            value={pageInput} 
+            onChange={handlePageInputChange} 
+            placeholder="페이지 번호 입력" 
+          />
+          <button onClick={handlePageInputSubmit}>이동</button>
+        </div>
+        
       </div>
     </>
   );

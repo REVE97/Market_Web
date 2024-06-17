@@ -71,3 +71,15 @@
   margin-top: 40px;
   font-weight: bold;
 }
+
+/* 사용자 페이지 이동 버튼 CSS */
+.pageInput {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.pageInput input {
+  width: 70px;
+  padding: 5px;
+}

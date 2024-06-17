@@ -47,9 +47,8 @@ export const Keyword = () => {
     },
     keywordButton: {
       padding: '10px 20px',
-      border: 'solid',
+      border: '1px solid #D5D5D5',
       borderRadius: '20px',
-      borderColor: '#D5D5D5',
       backgroundColor: 'white',
       color: 'gray',
       cursor: 'pointer',

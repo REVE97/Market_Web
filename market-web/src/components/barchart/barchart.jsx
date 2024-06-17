@@ -64,7 +64,7 @@ export const ProductBarChart = ({ productId }) => {
           BarChart
         </h3>
         <div style={buttonContainerStyle}>
-        <button style={buttonStyle} onClick={() => handleClick(6)}>7일</button>
+        <button style={buttonStyle} onClick={() => handleClick(7)}>7일</button>
         <button style={buttonStyle} onClick={() => handleClick(14)}>14일</button>
         <button style={buttonStyle} onClick={() => handleClick(29)}>30일</button>
       </div>

@@ -8,7 +8,7 @@ const NavContainer = styled.div`
   display: flex;
   gap: 1rem;
   padding: 1rem;
-  background-color: #f8f9fa;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
@@ -18,7 +18,7 @@ const Product = styled.div`
   align-items: center;
   padding: 0.5rem 1rem;
   background-color: #ffffff;
-  border: 3px solid #D5D5D5;
+  border: 1px solid #D5D5D5;
   border-radius: 20px;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
