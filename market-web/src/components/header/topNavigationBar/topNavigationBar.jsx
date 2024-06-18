@@ -7,6 +7,10 @@ export const TopNavigationBar = ({ cart }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
+  // 홈화면으로 새로고침 함수
+  const handleRefresh = () => {
+    window.location.href = '/';
+  };
 
   // 검색 엔진 함수
   const handleSearch = (e) => {
@@ -32,7 +36,7 @@ export const TopNavigationBar = ({ cart }) => {
     <header className={styles.header}>
       <div className={styles.inner}>
         {/* 홈 화면으로 가는 홈버튼 */}
-        <Link to="/">
+        <Link to="/" onClick={handleRefresh}>
           <h1 className={styles.logo}>
             <img src="/images/symbol.png" alt="logo" />
           </h1>
@@ -69,7 +73,7 @@ export const TopNavigationBar = ({ cart }) => {
           </div>
         </Link>
         
-        <Link to="">
+        <Link to="/mypage">
           <div className={styles.mypage}>
             <img src="/images/icon-user.svg" alt="user" />
             <span>마이페이지</span>

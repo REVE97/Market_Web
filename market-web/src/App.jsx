@@ -10,7 +10,6 @@ import { Signup } from "./components/signup/signup.jsx";
 import Home from "./pages/home";
 import Product from "./pages/product";
 import Basket  from "./pages/basket.jsx";
-
 import Keyword from "./components/keyword/keyword.jsx";
 
 function App() {
