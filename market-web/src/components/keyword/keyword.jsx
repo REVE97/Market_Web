@@ -43,7 +43,7 @@ export const Keyword = () => {
     },
     keywordTitle: {
       fontWeight: 'bold',
-      marginTop: '8px'
+      marginTop: '6px'
     },
     keywordButton: {
       padding: '10px 20px',

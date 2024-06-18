@@ -7,6 +7,7 @@ export const Login = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [nickname, setNickname] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -14,12 +15,30 @@ export const Login = () => {
     try {
       // axios 경로 수정필요
       const response = await axios.post('', { id, password });
-      alert('로그인에 성공했습니다.', response.data);
+      const token = response.data.token;
+      
+      // 토큰을 로컬 스토리지에 저장
+      localStorage.setItem('token', token);
+
+      // 닉네임 가져오기
+      const nicknameResponse = await axios.get('', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      const nickname = nicknameResponse.data.nickname;
+      setNickname(nickname);
+
+      alert(`로그인에 성공했습니다. 닉네임: ${nickname}`);
       
       navigate('/'); // 로그인 후 이동할 페이지 설정
+
     } catch (error) {
       setError('로그인에 실패하였습니다. 다시 시도해주세요.');
     }
+  };
+
+  const handleSignup = () => {
+    navigate('/signup');
   };
 
   return (
@@ -35,10 +54,16 @@ export const Login = () => {
           <label>Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <button type="submit" className="login-button">Login</button>
+        <div className="button-group">
+          <button type="submit" className="login-button">로그인</button>
+          <button type="button" className="signup-button" onClick={handleSignup}>회원가입</button>
+        </div>
       </form>
+      
+      {nickname && <p className="welcome-message">환영합니다, {nickname}님!</p>}
     </div>
   );
 };
 
 export default Login;
+

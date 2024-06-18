@@ -40,7 +40,7 @@ export const Signup = () => {
           <label>Password</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <button type="submit" className="signup-button">Signup</button>
+        <button type="submit" className="signup-button">회원가입</button>
       </form>
     </div>
   );

@@ -49,7 +49,7 @@
     border-color: #999;
   }
   
-  .login-button {
+  .login-button , .signup-button {
     width: 100%;
     padding: 10px;
     border: none;
@@ -63,5 +63,15 @@
   
   .login-button:hover {
     background-color: #555;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .signup-button {
+    background-color: darkgray;
   }
   
