@@ -93,7 +93,7 @@ export const Main = ({ products, setProducts, convertPrice }) => {
 
   return (
     <>
-      <p>CurrentPage : {currentPage} {'|'} TotalPage : {totalPages}</p>
+      <p>현재페이지 : {currentPage} {'|'} 총페이지 : {totalPages}</p>
       
       <div className={styles.filter}>
         <p onClick={()=> sortProduct("price_change_rate_low")}>할인 가격률 변동순</p>
