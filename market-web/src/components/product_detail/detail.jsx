@@ -1,10 +1,10 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom"; // useNavigate 임포트
 import { useEffect, useState } from "react";
 import styles from "./detail.module.css";
 import axios from "axios";
 
-import { ProductLineChart } from '../linechart/linechart.jsx'
+import { ProductLineChart } from '../linechart/linechart.jsx';
 import { ProductBarChart } from '../barchart/barchart.jsx';
 import { PieChartWithGroupedData } from '../piechart/piechart.jsx';
 
@@ -37,6 +37,8 @@ const Rating = ({ rating }) => {
 export const Detail = ({ convertPrice, cart, setCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  const navigate = useNavigate(); // useNavigate 훅
 
   // 알림 메시지 배열
   const [showAlert, setShowAlert] = useState(false);
@@ -44,7 +46,17 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
   // 데이터 연동
   useEffect(() => {
     axios.get("http://3.34.188.16:8080/api/products/").then((response) => {
-      setProduct(response.data.find((product) => product.id === parseInt(id)));
+      const productData = response.data.find((product) => product.id === parseInt(id));
+      setProduct(productData);
+      
+      if (productData) {
+        const related = response.data.filter(p => 
+          p.id !== productData.id && 
+          p.category_id === productData.category_id && 
+          p.brand_id === productData.brand_id
+        ).slice(0, 5);
+        setRelatedProducts(related);
+      }
     });
   }, [id]);
 
@@ -60,6 +72,11 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
     setCart([...cart, cartItem]);
     setShowAlert(true); // 알림 메시지 표시
     setTimeout(() => setShowAlert(false), 2000); // 2초 후 알림 메시지 숨기기
+  };
+
+  // 관련 제품 클릭 함수
+  const handleRelatedProductClick = (relatedProductId) => {
+    navigate(`/product/${relatedProductId}`);
   };
 
   return (
@@ -167,7 +184,24 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       <ProductBarChart productId={id} />
 
       <hr />
-
+      
+      {/* 관련 제품 정보 */}
+      <section className={styles.relatedProducts}>
+        <h2>관련 제품</h2>
+        <div className={styles.relatedProductsList}>
+          {relatedProducts.map((relatedProduct) => (
+            <div 
+              key={relatedProduct.id} 
+              className={styles.relatedProduct}
+              onClick={() => handleRelatedProductClick(relatedProduct.id)} 
+            >
+              <img src={relatedProduct.img_url} alt={relatedProduct.title} />
+              <p>{relatedProduct.title}</p>
+              <p>{new Intl.NumberFormat().format(relatedProduct.coupon_price)}원</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 };

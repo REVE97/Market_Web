@@ -203,3 +203,38 @@
 .LineCharts {
   width: 1000px;
 }
+
+/* 관련 제품 리스트 CSS */
+.relatedProducts {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.relatedProducts h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.relatedProductsList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.relatedProduct {
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.relatedProduct img {
+  width: 100%;
+  height: auto;
+}
+
+.relatedProduct p {
+  margin: 5px 0;
+  font-size: 14px;
+}
