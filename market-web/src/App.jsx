@@ -48,7 +48,9 @@ function App() {
           />
           
           {/* 제품 상세 페이지 */}
-          <Route path="/product/:id" element={<Product cart={cart} setCart={setCart} />} />
+          <Route path="/product/:id" element={
+            <Product cart={cart} setCart={setCart} />}
+          />
 
           {/* 제품 종류별 카테고리 */}
           <Route path="/categoryId/:category_id" element={
@@ -73,7 +75,7 @@ function App() {
                 setProducts={setProducts} 
                 convertPrice={convertPrice} />
             } 
-            />
+          />
 
           {/* 찜목록 페이지 생성 */}
           <Route path="/favorite" element={

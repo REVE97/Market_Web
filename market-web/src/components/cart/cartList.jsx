@@ -1,7 +1,7 @@
 import styles from "./cart.module.css"
 import { useNavigate } from 'react-router-dom';
 
-export const CartList = ( { cart, convertPrice, handleRemove } ) => {
+export const CartList = ( { cart, convertPrice, handleRemove  } ) => {
 
 
   // 찜목록에서 제품 페이지 버튼 클릭시 해당 제품 페이지 이동

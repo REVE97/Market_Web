@@ -166,7 +166,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       {/* BarCharts 그래프 */}
       <ProductBarChart productId={id} />
 
-      <hr /><br />
+      <hr />
 
     </>
   );

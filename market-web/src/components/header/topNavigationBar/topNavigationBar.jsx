@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styles from "./topNavigationBar.module.css";
 
-export const TopNavigationBar = ({ cart }) => {
+export const TopNavigationBar = ({ cart, uniqueCart }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
@@ -65,11 +65,11 @@ export const TopNavigationBar = ({ cart }) => {
           <div className={styles.mypage}>
             <img src="/images/icon-favorite.svg" alt="cart" />
             <span>찜목록</span>
-            {cart.length >= 1 ? (
+            {/* {cart.length >= 1 ? (
               <div className={styles.new_shopping_cart}>
-                <p>{cart.length}</p>
+                <p>{uniqueCart.length}</p>
               </div>
-            ) : ("")}
+            ) : ("")} */}
           </div>
         </Link>
         
