@@ -1,5 +1,10 @@
-/* #root {
-} */
+#root {
+  width: 120%;
+  height: 100%;
+  margin-left: 30px;
+  transform: scale(0.8); /* 기본 80% 설정 */
+  transform-origin: 0 0; /* 원점 기준으로 스케일 조정 */
+}
 
 * {
   margin: 0;
