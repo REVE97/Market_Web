@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate } from "react-router-dom"; // useNavigate 임포트
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "./detail.module.css";
 import axios from "axios";
@@ -196,12 +196,15 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
               onClick={() => handleRelatedProductClick(relatedProduct.id)} 
             >
               <img src={relatedProduct.img_url} alt={relatedProduct.title} />
+              <p style={{ color:'gray' }}>{relatedProduct.brand_name}</p>
               <p>{relatedProduct.title}</p>
               <p>{new Intl.NumberFormat().format(relatedProduct.coupon_price)}원</p>
             </div>
           ))}
         </div>
       </section>
+
+      <hr />
     </>
   );
 };
