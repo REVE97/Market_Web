@@ -110,7 +110,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
             
             {/* 가격 정보 */}
             <span className={styles.price}> 
-              <span style={{ fontSize:'30px' }}>정가 : {' '}</span>
+              <span style={{ fontSize:'20px' }}>출시가 : {' '}</span>
               <span style={{ textDecoration: 'line-through', opacity: 0.4 }}> 
                  {new Intl.NumberFormat().format(product.origin_price)}
               </span>
@@ -118,7 +118,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
               <span className={styles.discount_rate}>{product.discount_rate}</span>
               <br />
               
-              <span style={{ fontSize:'30px' }}>할인가 : {' '}</span>
+              <span style={{ fontSize:'20px' }}>할인가 : {' '}</span>
               <span style={{color:'red'}}> 
                  {new Intl.NumberFormat().format(product.coupon_price)}
               </span>

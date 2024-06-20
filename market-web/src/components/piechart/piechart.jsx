@@ -87,6 +87,9 @@ export const PieChartWithGroupedData = ({ productId }) => {
 
   return (
     <div style={{ width: '100%', height: '500px', maxWidth: '700px' }}>
+      <h3 style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif', fontSize: '20px', fontWeight: 'bold'  }}>
+          가격별 변동 횟수
+      </h3>
       <PieChart width={400} height={400} >
         <Pie
           activeIndex={activeIndex}
