@@ -38,8 +38,8 @@ export const ProductLineChart = ({ productId }) => {
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 450, margin: 70 }}>
-      <div style={{ width: '80%' }}>
-        <h3 style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif', fontSize: '20px', fontWeight: 'bold', margin: 20}}>LineChart</h3>
+      <div style={{ width: '100%' }}>
+        <h3 style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif', fontSize: '20px', fontWeight: 'bold', margin: 20}}>가격 변동 차트</h3>
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
           <p style={{ color : 'red', fontWeight: 'bold' }}>역대 최고값 : {highestPrice}원</p>
           <p style={{ color: 'blue', fontWeight: 'bold' }}>역대 최저값 : {lowestPrice}원</p>
