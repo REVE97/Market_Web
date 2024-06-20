@@ -8,6 +8,11 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
     setCart(cart.filter((el) => el.id !== id));
   };
 
+  // 찜목록 전체 삭제 버튼
+  const handleRemoveAll = () => {
+    setCart([]);
+  };
+
   // 중복된 product.id를 제거한 새로운 배열 생성
   const uniqueCart = cart.reduce((acc, current) => {
     const x = acc.find(item => item.id === current.id);
@@ -26,17 +31,25 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
           <p>찜목록을 추가하세요.</p>
         </div>
       ) : (
-        uniqueCart.map((cart) => {
-          return (
-            <CartList
-              key={`key-${cart.id}`}
-              cart={cart}
-              setCart={setCart}
-              convertPrice={convertPrice}
-              handleRemove={handleRemove}
-            />
-          );
-        })
+        <div>
+          <button 
+            className={styles.remove_all_button} 
+            onClick={handleRemoveAll}
+          >
+            찜목록 전체 삭제
+          </button>
+          {uniqueCart.map((cart) => {
+            return (
+              <CartList
+                key={`key-${cart.id}`}
+                cart={cart}
+                setCart={setCart}
+                convertPrice={convertPrice}
+                handleRemove={handleRemove}
+              />
+            );
+          })}
+        </div>
       )}
     </>
   );

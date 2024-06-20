@@ -77,6 +77,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
   // 관련 제품 클릭 함수
   const handleRelatedProductClick = (relatedProductId) => {
     navigate(`/product/${relatedProductId}`);
+    window.scrollTo(0, 0);  // 제품 클릭시에 스크롤 맨위로 이동
   };
 
   return (

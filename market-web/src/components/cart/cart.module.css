@@ -288,3 +288,18 @@
 .page_button:hover {
   background-color: #c4c4c4;
 }
+
+/* 찜목록 전체 삭제 CSS */
+.remove_all_button {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.remove_all_button:hover {
+  background-color: black;
+}
