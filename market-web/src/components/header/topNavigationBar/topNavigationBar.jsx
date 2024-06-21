@@ -73,7 +73,7 @@ export const TopNavigationBar = ({ cart, uniqueCart }) => {
           </div>
         </Link>
         
-        <Link to="/mypage">
+        {/* <Link to="/mypage">
           <div className={styles.mypage}>
             <img src="/images/icon-user.svg" alt="user" />
             <span>마이페이지</span>
@@ -85,7 +85,7 @@ export const TopNavigationBar = ({ cart, uniqueCart }) => {
             <img src="/images/icon-power.svg" alt="login" />
             <span>로그인</span>
           </div>
-        </Link>
+        </Link> */}
       </div>
 
     </header>
