@@ -1,7 +1,5 @@
 # Real-time Price Information Web Page Project
 
-<hr />
-
 ## 프로젝트 시연 영상
 <p>
   <img width="100%" src="https://github.com/REVE97/Market_Web/assets/121287440/36720f79-3347-49cc-8037-f4f6805e9e7b">
@@ -9,7 +7,7 @@
 
 ## 프로젝트 아키텍처 구성도
 <p>
-  <img width="800" height="800" src="https://github.com/REVE97/Market_Web/assets/121287440/11f0fc3c-cab3-440f-895a-0a396019e06c">
+  <img width="700" height="600" src="https://github.com/REVE97/Market_Web/assets/121287440/11f0fc3c-cab3-440f-895a-0a396019e06c">
 </p>
 
 <hr />
